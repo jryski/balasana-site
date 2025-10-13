@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balasana - Wellness From The Inside Out</title>
-    <meta name="description" content="Premium science-backed nutrition and supplements. BalanceEQ nootropics launching 2026.">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Balasana - Balance From the Inside Out</title>
+    <meta name="description" content="Science-backed nootropic supplements, performance nutrition, and curated wellness from Balasana. BalanceEQ product line launching 2026.">
     
     <style>
         * {
@@ -16,552 +13,1450 @@
             box-sizing: border-box;
         }
         
-        html {
-            scroll-behavior: smooth;
-        }
-        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-            -webkit-font-smoothing: antialiased;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(to bottom, #0f172a, #1e1b4b);
+            color: #e2e8f0;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
         
-        .gradient-text {
-            background: linear-gradient(to right, #fff, #c4b5fd, #fae8ff);
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            cursor: pointer;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        
+        .nav-links a:hover {
+            color: #8b5cf6;
+        }
+        
+        /* Page sections */
+        .page {
+            display: none;
+            padding: 8rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        /* Hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff, #8b5cf6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         
-        .nav-scrolled {
-            background: rgba(2, 6, 23, 0.95);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(71, 85, 105, 0.5);
+        .subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            color: #94a3b8;
+            margin-bottom: 2rem;
         }
         
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: bold;
+            margin-bottom: 2rem;
+            text-align: center;
         }
         
-        .animate-bounce {
-            animation: bounce 2s infinite;
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
         }
-
-        .tab-button {
-            transition: all 0.3s ease;
+        
+        /* Product Grid */
+        .product-section {
+            margin-bottom: 4rem;
         }
-
-        .tab-button.active {
-            background: linear-gradient(to bottom right, rgba(139, 92, 246, 0.2), rgba(217, 70, 239, 0.2));
-            border-color: rgba(139, 92, 246, 0.5);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        
+        .phase-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .phase-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .product-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(51, 65, 85, 0.3));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(139, 92, 246, 0.6);
+            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
+        }
+        
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8b5cf6, #ec4899);
+        }
+        
+        .product-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+        
+        .product-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .product-card p {
+            color: #94a3b8;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .product-launch {
+            font-size: 0.875rem;
+            color: #8b5cf6;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .product-ingredients {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .product-ingredients h4 {
+            font-size: 0.875rem;
+            color: #cbd5e1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .ingredient-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .ingredient-tag {
+            font-size: 0.75rem;
+            background: rgba(139, 92, 246, 0.2);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            color: #a78bfa;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .ingredient-tag:hover {
+            background: rgba(139, 92, 246, 0.4);
+            border-color: rgba(139, 92, 246, 0.6);
+        }
+        
+        .subscribe-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .subscribe-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.5);
+        }
+        
+        /* Story Section */
+        .story-container {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(51, 65, 85, 0.3));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 2rem;
+            padding: 3rem;
+            margin: 2rem auto;
+            max-width: 900px;
+        }
+        
+        .story-container p {
+            font-size: 1.125rem;
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .story-highlight {
+            border-top: 2px solid rgba(139, 92, 246, 0.3);
+            padding-top: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .story-highlight .label {
+            color: #8b5cf6;
+            font-weight: 600;
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .story-highlight .mission {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        
+        /* Ingredient Detail Page */
+        .ingredient-detail {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #8b5cf6;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .back-button:hover {
+            color: #a78bfa;
+            transform: translateX(-5px);
+        }
+        
+        .ingredient-header {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(51, 65, 85, 0.3));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .ingredient-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-item {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+        
+        .meta-label {
+            font-size: 0.875rem;
+            color: #94a3b8;
+            margin-bottom: 0.25rem;
+        }
+        
+        .meta-value {
+            font-size: 1.125rem;
+            color: #e2e8f0;
+            font-weight: 600;
+        }
+        
+        .studies-section {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(51, 65, 85, 0.3));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .study-link {
+            display: block;
+            color: #8b5cf6;
+            text-decoration: none;
+            padding: 0.75rem 1rem;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            transition: all 0.2s;
+        }
+        
+        .study-link:hover {
+            background: rgba(139, 92, 246, 0.2);
+            transform: translateX(5px);
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .modal-close:hover {
+            color: white;
+        }
+        
+        .modal form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .modal input {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            background: rgba(15, 23, 42, 0.8);
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .modal input::placeholder {
+            color: #64748b;
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(15, 23, 42, 0.8);
+            border-top: 1px solid rgba(139, 92, 246, 0.2);
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        
+        .footer-section a:hover {
+            color: #8b5cf6;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(51, 65, 85, 0.5);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .footer-bottom p {
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
-
+<body>
     <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-lg flex items-center justify-center">
-                        <span class="text-white font-bold text-xl">B</span>
-                    </div>
-                    <div>
-                        <div class="text-xl font-bold tracking-tight">Balasana</div>
-                        <div class="text-xs text-slate-400 tracking-wider">WELLNESS</div>
-                    </div>
-                </div>
-                
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#story" class="text-slate-300 hover:text-white transition-colors">Our Story</a>
-                    <a href="#science" class="text-slate-300 hover:text-white transition-colors">The Science</a>
-                    <a href="#products" class="text-slate-300 hover:text-white transition-colors">Products</a>
-                    <a href="#signup" class="bg-gradient-to-r from-violet-600 to-fuchsia-600 px-6 py-2.5 rounded-lg font-medium hover:shadow-lg hover:shadow-violet-500/50 transition-all">
-                        Get Early Access
-                    </a>
-                </div>
-
-                <button id="mobile-menu-btn" class="md:hidden">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" onclick="showPage('home')">BALASANA</div>
+            <ul class="nav-links">
+                <li><a onclick="showPage('home')">Home</a></li>
+                <li><a onclick="showPage('products')">Products</a></li>
+                <li><a onclick="scrollToBundles()">Bundles</a></li>
+                <li><a onclick="showPage('story')">Our Story</a></li>
+                <li><a onclick="showPage('ingredients')">Ingredients</a></li>
+            </ul>
         </div>
     </nav>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-slate-950/98 backdrop-blur-lg md:hidden pt-20">
-        <div class="flex flex-col items-center space-y-8 p-8">
-            <a href="#story" class="text-2xl text-slate-300 hover:text-white mobile-link">Our Story</a>
-            <a href="#science" class="text-2xl text-slate-300 hover:text-white mobile-link">The Science</a>
-            <a href="#products" class="text-2xl text-slate-300 hover:text-white mobile-link">Products</a>
-            <a href="#signup" class="bg-gradient-to-r from-violet-600 to-fuchsia-600 px-8 py-3 rounded-lg font-medium text-lg mobile-link">
-                Get Early Access
-            </a>
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <div class="hero">
+            <h1>Balance From the Inside Out</h1>
+            <p class="subtitle">Science-backed supplements and nutrition for peak performance and true equilibrium</p>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <button class="subscribe-btn" style="max-width: 400px; margin: 0 auto;" onclick="showPage('products')">
+                Explore Product Line
+            </button>
+        </div>
+
+        <h2>The BalanceEQ System</h2>
+        <p style="text-align: center; color: #94a3b8; max-width: 800px; margin: 0 auto 3rem;">
+            A comprehensive approach to cognitive wellness, performance, and recovery. Each formula is built on clinical research, transparent dosing, and premium ingredients.
+        </p>
+
+        <div class="product-grid">
+            <div class="product-card" onclick="showPage('products')">
+                <div class="product-icon">☀️</div>
+                <h3>EQ:Focus</h3>
+                <p>Circadian-optimized morning nootropic for peak mental clarity and focus. Launching Q1 2026.</p>
+            </div>
+            
+            <div class="product-card" onclick="showPage('products')">
+                <div class="product-icon">🌙</div>
+                <h3>EQ:Restore</h3>
+                <p>Evening recovery formula for stress resilience and restorative sleep. Launching Q1 2026.</p>
+            </div>
+            
+            <div class="product-card" onclick="showPage('products')">
+                <div class="product-icon">⚡</div>
+                <h3>EQ:Drive</h3>
+                <p>Clean, sustained energy for demanding days. Coming Q3 2026.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 4rem auto; max-width: 800px;">
+            <div style="background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(139, 92, 246, 0.1)); border: 2px solid rgba(236, 72, 153, 0.3); border-radius: 1.5rem; padding: 2rem;">
+                <h3 style="margin-bottom: 1rem;">💑 Introducing the Partner Pack</h3>
+                <p style="color: #cbd5e1; margin-bottom: 1.5rem;">
+                    Tackle life's challenges with your P.I.C. Complete 30-day supply of Focus & Restore for two people. Save 15% and build healthy routines together.
+                </p>
+                <button class="subscribe-btn" style="max-width: 300px; margin: 0 auto;" onclick="scrollToBundles()">
+                    Explore Bundles
+                </button>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <button class="subscribe-btn" style="max-width: 300px; margin: 0 auto;" onclick="showPage('products')">
+                View Complete Line
+            </button>
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <!-- EDIT TEXT BELOW THIS COMMENT -->
-    <section class="relative pt-32 pb-20 px-4 overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(139,92,246,0.1),transparent_50%)]"></div>
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(217,70,239,0.1),transparent_50%)]"></div>
+    <!-- PRODUCTS PAGE -->
+    <div id="products" class="page">
+        <div class="hero">
+            <h1>Our Product Line</h1>
+            <p class="subtitle">Science-backed formulations for every aspect of cognitive wellness</p>
+        </div>
+
+        <!-- Phase 1 Products -->
+        <div class="product-section">
+            <div class="phase-header">
+                <span class="phase-badge">LAUNCHING Q1 2026</span>
+                <h2>Phase 1: Core System</h2>
+                <p style="color: #94a3b8; max-width: 800px; margin: 0 auto;">
+                    The foundation of the BalanceEQ system. Circadian-optimized nootropics for 24-hour cognitive support.
+                </p>
+            </div>
+            
+            <div class="product-grid">
+                <!-- EQ:Focus -->
+                <div class="product-card">
+                    <div class="product-icon">☀️</div>
+                    <h3>EQ:Focus</h3>
+                    <p>Sharpen attention without stimulants. Built for deep work, fast context-switching, and calm execution.</p>
+                    
+                    <div class="product-ingredients">
+                        <h4>Key Ingredients:</h4>
+                        <div class="ingredient-tags">
+                            <span class="ingredient-tag" onclick="showIngredient('Citicoline')">Citicoline 250mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Lion\'s Mane')">Lion's Mane 500mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Rhodiola')">Rhodiola 150mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('NALT')">NALT 300mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('L-Theanine')">L-Theanine 150mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('NR')">NR 250mg</span>
+                        </div>
+                    </div>
+                    
+                    <ul style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem; padding-left: 1.5rem;">
+                        <li>Supports working memory and task focus</li>
+                        <li>Promotes calm under pressure</li>
+                        <li>Supports cellular energy metabolism</li>
+                    </ul>
+                    
+                    <p class="product-launch">Launch: April 6, 2026</p>
+                    <button class="subscribe-btn" onclick="openModal('EQ:Focus')">Get Notified</button>
+                </div>
+                
+                <!-- EQ:Restore -->
+                <div class="product-card">
+                    <div class="product-icon">🌙</div>
+                    <h3>EQ:Restore</h3>
+                    <p>Downshift stress and wake clearer. Sleep support that also helps next-day recall.</p>
+                    
+                    <div class="product-ingredients">
+                        <h4>Key Ingredients:</h4>
+                        <div class="ingredient-tags">
+                            <span class="ingredient-tag" onclick="showIngredient('Magnesium L-Threonate')">Mag L-Threonate 1000mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Ashwagandha')">Ashwagandha 300mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Bacopa')">Bacopa 300mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('L-Theanine')">L-Theanine 200mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Phosphatidylserine')">PS 150mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Saffron')">Saffron 28mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Apigenin')">Apigenin 25mg</span>
+                        </div>
+                    </div>
+                    
+                    <ul style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem; padding-left: 1.5rem;">
+                        <li>Supports relaxation and sleep quality</li>
+                        <li>Helps maintain healthy stress response</li>
+                        <li>Supports memory consolidation overnight</li>
+                    </ul>
+                    
+                    <p class="product-launch">Launch: April 6, 2026</p>
+                    <button class="subscribe-btn" onclick="openModal('EQ:Restore')">Get Notified</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 2 Products -->
+        <div class="product-section">
+            <div class="phase-header">
+                <span class="phase-badge">COMING Q3-Q4 2026</span>
+                <h2>Phase 2: Complete Wellness</h2>
+                <p style="color: #94a3b8; max-width: 800px; margin: 0 auto;">
+                    Expanding the ecosystem with targeted support for energy, recovery, vision, and foundational health.
+                </p>
+            </div>
+            
+            <div class="product-grid">
+                <!-- EQ:Drive -->
+                <div class="product-card">
+                    <div class="product-icon">⚡</div>
+                    <h3>EQ:Drive</h3>
+                    <p>Turn on clean, sustained drive for heavy lift days—no jitters.</p>
+                    
+                    <div class="product-ingredients">
+                        <h4>Key Ingredients:</h4>
+                        <div class="ingredient-tags">
+                            <span class="ingredient-tag" onclick="showIngredient('Uridine')">Uridine 150mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('ALCAR')">ALCAR 500mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Pine Bark')">Pine Bark 100mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('CoQ10')">CoQ10 100mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('PQQ')">PQQ 10mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('NAC')">NAC 600mg</span>
+                        </div>
+                    </div>
+                    
+                    <ul style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem; padding-left: 1.5rem;">
+                        <li>Supports mitochondrial energy production</li>
+                        <li>Helps reduce feelings of mental fatigue</li>
+                        <li>Complements Focus for long cognitive blocks</li>
+                    </ul>
+                    
+                    <p class="product-launch">Launch: Q3 2026</p>
+                    <button class="subscribe-btn" onclick="openModal('EQ:Drive')">Get Notified</button>
+                </div>
+                
+                <!-- EQ:Foundations -->
+                <div class="product-card">
+                    <div class="product-icon">🛡️</div>
+                    <h3>EQ:Foundations</h3>
+                    <p>Cover the gaps so your brain runs clean. Core omega-3s with D3/K2 for daily resilience.</p>
+                    
+                    <div class="product-ingredients">
+                        <h4>Key Ingredients:</h4>
+                        <div class="ingredient-tags">
+                            <span class="ingredient-tag" onclick="showIngredient('Vitamin D3')">D3 2000 IU</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Vitamin K2')">K2 (MK-7) 100µg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Omega-3')">Omega-3 (EPA 900mg/DHA 600mg)</span>
+                        </div>
+                    </div>
+                    
+                    <ul style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem; padding-left: 1.5rem;">
+                        <li>Supports brain, eye, and heart health</li>
+                        <li>Helps maintain healthy vitamin D status</li>
+                        <li>Antioxidant support with mixed tocopherols</li>
+                    </ul>
+                    
+                    <p class="product-launch">Launch: Q3 2026</p>
+                    <button class="subscribe-btn" onclick="openModal('EQ:Foundations')">Get Notified</button>
+                </div>
+                
+                <!-- EQ:Shield -->
+                <div class="product-card">
+                    <div class="product-icon">🛡️</div>
+                    <h3>EQ:Shield</h3>
+                    <p>Daily defense for recovery and joint comfort—inside-out resilience.</p>
+                    
+                    <div class="product-ingredients">
+                        <h4>Key Ingredients:</h4>
+                        <div class="ingredient-tags">
+                            <span class="ingredient-tag" onclick="showIngredient('Curcumin')">Curcumin 150mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Quercetin')">Quercetin 120mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Resveratrol')">Resveratrol 60mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Ginger')">Ginger 60mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Boswellia')">Boswellia 60mg</span>
+                        </div>
+                    </div>
+                    
+                    <ul style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem; padding-left: 1.5rem;">
+                        <li>Supports healthy inflammatory response</li>
+                        <li>Antioxidant support against oxidative stress</li>
+                        <li>Complements training and recovery</li>
+                    </ul>
+                    
+                    <p class="product-launch">Launch: Q4 2026</p>
+                    <button class="subscribe-btn" onclick="openModal('EQ:Shield')">Get Notified</button>
+                </div>
+                
+                <!-- EQ:Vision -->
+                <div class="product-card">
+                    <div class="product-icon">👁️</div>
+                    <h3>EQ:Vision</h3>
+                    <p>Relieve and protect overworked eyes from screens and glare.</p>
+                    
+                    <div class="product-ingredients">
+                        <h4>Key Ingredients:</h4>
+                        <div class="ingredient-tags">
+                            <span class="ingredient-tag" onclick="showIngredient('Lutein')">Lutein 10mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Zeaxanthin')">Zeaxanthin 2mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Astaxanthin')">Astaxanthin 4mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Bilberry')">Bilberry 80mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Blackcurrant')">Blackcurrant 80mg</span>
+                        </div>
+                    </div>
+                    
+                    <ul style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem; padding-left: 1.5rem;">
+                        <li>Supports macular pigment and visual performance</li>
+                        <li>Helps ease eye strain from screen time</li>
+                        <li>Antioxidant support for retinal cells</li>
+                    </ul>
+                    
+                    <p class="product-launch">Launch: Q4 2026</p>
+                    <button class="subscribe-btn" onclick="openModal('EQ:Vision')">Get Notified</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bundles Section -->
+        <div class="product-section">
+            <div class="phase-header">
+                <span class="phase-badge">SMART STACKS</span>
+                <h2>Bundles & Packs</h2>
+                <p style="color: #94a3b8; max-width: 800px; margin: 0 auto;">
+                    Thoughtfully curated combinations for maximum synergy and better value.
+                </p>
+            </div>
+            
+            <div class="product-grid">
+                <!-- Partner Pack -->
+                <div class="product-card" style="border: 2px solid rgba(236, 72, 153, 0.5);">
+                    <div class="product-icon">💑</div>
+                    <h3>Partner Pack</h3>
+                    <span class="phase-badge" style="font-size: 0.75rem; padding: 0.25rem 0.75rem;">MOST POPULAR</span>
+                    <p style="margin-top: 1rem;">Tackle life's challenges with your P.I.C. (Partner in Crime). Complete 30-day supply for two.</p>
+                    
+                    <div class="product-ingredients">
+                        <h4>What's Included:</h4>
+                        <div style="color: #cbd5e1; font-size: 0.95rem; margin-top: 0.5rem;">
+                            <p>• 2x EQ:Focus (60 servings)</p>
+                            <p>• 2x EQ:Restore (60 servings)</p>
+                        </div>
+                    </div>
+                    
+                    <ul style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem; padding-left: 1.5rem;">
+                        <li>Support each other's wellness journey</li>
+                        <li>Shared routine builds accountability</li>
+                        <li>Perfect for couples, roommates, workout partners</li>
+                        <li>Save 15% vs buying individually</li>
+                    </ul>
+                    
+                    <p class="product-launch">Launch: April 6, 2026</p>
+                    <button class="subscribe-btn" onclick="openModal('Partner Pack')">Get Notified</button>
+                </div>
+                
+                <!-- 24/7 Stack -->
+                <div class="product-card">
+                    <div class="product-icon">🔄</div>
+                    <h3>24/7 Stack</h3>
+                    <p>Complete circadian support. Morning focus meets evening recovery.</p>
+                    
+                    <div class="product-ingredients">
+                        <h4>What's Included:</h4>
+                        <div style="color: #cbd5e1; font-size: 0.95rem; margin-top: 0.5rem;">
+                            <p>• 1x EQ:Focus (30 servings)</p>
+                            <p>• 1x EQ:Restore (30 servings)</p>
+                        </div>
+                    </div>
+                    
+                    <ul style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem; padding-left: 1.5rem;">
+                        <li>Optimized for your body's natural rhythm</li>
+                        <li>Synergistic day-night protocol</li>
+                        <li>Save 10% vs buying separately</li>
+                    </ul>
+                    
+                    <p class="product-launch">Launch: April 6, 2026</p>
+                    <button class="subscribe-btn" onclick="openModal('24/7 Stack')">Get Notified</button>
+                </div>
+                
+                <!-- Performance Bundle -->
+                <div class="product-card">
+                    <div class="product-icon">🚀</div>
+                    <h3>Performance Bundle</h3>
+                    <p>Everything you need for peak mental and physical output.</p>
+                    
+                    <div class="product-ingredients">
+                        <h4>What's Included:</h4>
+                        <div style="color: #cbd5e1; font-size: 0.95rem; margin-top: 0.5rem;">
+                            <p>• 1x EQ:Focus (30 servings)</p>
+                            <p>• 1x EQ:Drive (30 servings)</p>
+                            <p>• 1x EQ:Shield (30 servings)</p>
+                        </div>
+                    </div>
+                    
+                    <ul style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem; padding-left: 1.5rem;">
+                        <li>Mental clarity + sustained energy</li>
+                        <li>Recovery and inflammation support</li>
+                        <li>Ideal for athletes and high performers</li>
+                        <li>Save 12% vs buying individually</li>
+                    </ul>
+                    
+                    <p class="product-launch">Launch: Q3 2026</p>
+                    <button class="subscribe-btn" onclick="openModal('Performance Bundle')">Get Notified</button>
+                </div>
+                
+                <!-- Complete System -->
+                <div class="product-card">
+                    <div class="product-icon">⭐</div>
+                    <h3>Complete System</h3>
+                    <p>The full BalanceEQ ecosystem. Leave nothing to chance.</p>
+                    
+                    <div class="product-ingredients">
+                        <h4>What's Included:</h4>
+                        <div style="color: #cbd5e1; font-size: 0.95rem; margin-top: 0.5rem;">
+                            <p>• All 6 EQ Products (30-day supply each)</p>
+                            <p>• Custom supplement schedule guide</p>
+                            <p>• Priority customer support</p>
+                        </div>
+                    </div>
+                    
+                    <ul style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem; padding-left: 1.5rem;">
+                        <li>Complete cognitive & physical wellness</li>
+                        <li>Comprehensive, synergistic protocol</li>
+                        <li>Maximum value - Save 20%</li>
+                    </ul>
+                    
+                    <p class="product-launch">Launch: Q4 2026</p>
+                    <button class="subscribe-btn" onclick="openModal('Complete System')">Get Notified</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- STORY PAGE -->
+    <div id="story" class="page">
+        <div class="hero">
+            <h1>The Journey to Balance</h1>
+        </div>
         
-        <div class="max-w-7xl mx-auto text-center relative z-10">
-            <div class="inline-flex items-center space-x-2 bg-violet-500/10 border border-violet-500/20 rounded-full px-4 py-2 mb-8">
-                <svg class="w-4 h-4 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                </svg>
-                <span class="text-sm text-violet-300">Premium Science-Backed Nutrition</span>
+        <div class="story-container">
+            <p>
+                I hit a wall I didn't see coming. Not a gentle "I need a vacation" wall—the kind where you wake up exhausted after 8 hours of sleep. Where you stare at your to-do list and feel nothing but dread. Where you snap at the people you love most because you have nothing left to give.
+            </p>
+            <p>
+                I was overloaded. Burned out. Running on fumes. The worst part? Everyone kept telling me this was just "part of being a parent." But this wasn't normal tired. This was lying-awake-at-3am-despite-being-exhausted tired. I knew something had to change. <strong>I refused to accept that this was just how life had to be.</strong>
+            </p>
+            <p>
+                I started researching—really researching. Not just Googling "supplements for energy," but diving into clinical studies, learning about neurotransmitters, stress hormones, and circadian rhythms. I discovered that what I was experiencing had names: chronic stress, cognitive fatigue, HPA axis dysregulation.
+            </p>
+            <p>
+                <strong>And I learned something crucial:</strong> Your brain doesn't work the same way at 7am and 7pm. In the morning, you need support for focus, clarity, and mental energy. In the evening, you need support for recovery, memory consolidation, and restorative sleep.
+            </p>
+            <p>
+                Yet every supplement I found treated my brain like it was the same all day. One formula. One approach. That's when I realized: <strong>Nobody had built what I actually needed.</strong>
+            </p>
+            <p>
+                Balasana started as a dream to create wellness apparel—the name itself, Sanskrit for "child's pose," represented our commitment to finding equilibrium. But as we researched and spoke with customers, we realized something fundamental: true balance doesn't start with what you wear. It starts with what fuels you from within.
+            </p>
+            <p>
+                I decided to create what should have existed all along: <strong>A circadian nootropic system built for real people dealing with real stress.</strong> Not marketing doses. Not proprietary blends hiding insufficient ingredients. Clinical-grade formulas with transparent dosing and actual efficacy.
+            </p>
+            <div class="story-highlight">
+                <p class="label">The mission remains the same:</p>
+                <p class="mission">Help you find your balance, from the inside out.</p>
+                <p style="margin-top: 1.5rem; color: #94a3b8;">— Jesse, Founder</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- INGREDIENTS PAGE -->
+    <div id="ingredients" class="page">
+        <div class="hero">
+            <h1>Our Ingredients</h1>
+            <p class="subtitle">Every ingredient is chosen for efficacy and dosed according to clinical research</p>
+        </div>
+        
+        <div id="ingredientList">
+            <p style="text-align: center; color: #94a3b8; margin-top: 2rem;">
+                Click on any ingredient tag from the product pages to learn more about the science behind our formulations.
+            </p>
+        </div>
+    </div>
+
+    <!-- INGREDIENT DETAIL PAGE -->
+    <div id="ingredientDetail" class="page">
+        <div class="ingredient-detail">
+            <a class="back-button" onclick="showPage('products')">← Back to Products</a>
+            
+            <div class="ingredient-header">
+                <h1 id="ingredientName">Ingredient Name</h1>
+                <p id="ingredientClaim" style="color: #94a3b8; font-size: 1.125rem; margin-top: 1rem;"></p>
+                
+                <div class="ingredient-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">Category</div>
+                        <div class="meta-value" id="ingredientCategory"></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Our Dosage</div>
+                        <div class="meta-value" id="ingredientDose"></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Therapeutic Range</div>
+                        <div class="meta-value" id="ingredientRange"></div>
+                    </div>
+                </div>
             </div>
             
-            <!-- MAIN HEADLINE - EASY TO EDIT -->
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text leading-tight">
-                From The Inside Out,<br>Find Your Balance
-            </h1>
+            <div class="studies-section">
+                <h2>Clinical Research</h2>
+                <p style="color: #94a3b8; margin-bottom: 1.5rem;">
+                    Our formulations are based on peer-reviewed scientific literature:
+                </p>
+                <div id="studyLinks"></div>
+            </div>
             
-            <!-- SUBHEADLINE - EASY TO EDIT -->
-            <p class="text-xl md:text-2xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Balasana began as a wellness apparel brand. We realized the biggest impact starts from within. Now we bring the same commitment to quality and balance to cognitive wellness.
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-                <a href="#products" class="bg-gradient-to-r from-violet-600 to-fuchsia-600 px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-2xl hover:shadow-violet-500/50 transition-all flex items-center space-x-2 group">
-                    <span>Discover BalanceEQ</span>
-                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg>
-                </a>
-                <a href="#story" class="border border-slate-600 hover:border-slate-400 px-8 py-4 rounded-lg font-semibold text-lg transition-all">
-                    Our Story
-                </a>
-            </div>
-
-            <div class="flex items-center justify-center space-x-2 text-slate-400">
-                <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-                <span class="text-sm">Scroll to explore</span>
+            <div class="studies-section">
+                <h3>Found In:</h3>
+                <div id="relatedProducts"></div>
             </div>
         </div>
-    </section>
-
-    <!-- Mind Body Spirit Section -->
-    <section id="science" class="py-20 px-4 bg-slate-900/50">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">Mind. Body. Spirit.</h2>
-                <p class="text-xl text-slate-300 max-w-2xl mx-auto">
-                    True wellness is the harmony of all three. Our circadian-optimized formulas work with your body's natural rhythms.
-                </p>
-            </div>
-
-            <!-- Tabs -->
-            <div class="flex flex-col md:flex-row gap-4 mb-8">
-                <button class="tab-button active flex-1 p-6 rounded-2xl border-2 border-slate-700/50 bg-slate-800/30" onclick="showTab('mind')">
-                    <svg class="w-8 h-8 text-violet-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                    </svg>
-                    <h3 class="text-2xl font-bold mb-1">Mind</h3>
-                    <p class="text-sm text-slate-400">Cognitive Excellence</p>
-                </button>
-
-                <button class="tab-button flex-1 p-6 rounded-2xl border-2 border-slate-700/50 bg-slate-800/30" onclick="showTab('body')">
-                    <svg class="w-8 h-8 text-slate-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                    </svg>
-                    <h3 class="text-2xl font-bold mb-1">Body</h3>
-                    <p class="text-sm text-slate-400">Physical Vitality</p>
-                </button>
-
-                <button class="tab-button flex-1 p-6 rounded-2xl border-2 border-slate-700/50 bg-slate-800/30" onclick="showTab('spirit')">
-                    <svg class="w-8 h-8 text-slate-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                    </svg>
-                    <h3 class="text-2xl font-bold mb-1">Spirit</h3>
-                    <p class="text-sm text-slate-400">Inner Balance</p>
-                </button>
-            </div>
-
-            <!-- Tab Content -->
-            <div class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 md:p-12">
-                <div id="tab-mind" class="tab-content">
-                    <div class="flex items-start space-x-4 mb-6">
-                        <svg class="w-10 h-10 text-violet-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                        </svg>
-                        <div>
-                            <h3 class="text-3xl font-bold mb-2">Mind</h3>
-                            <p class="text-lg text-slate-300">Circadian-optimized nootropics engineered for peak mental performance. Therapeutic doses that actually work.</p>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-                        <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
-                            <div class="w-2 h-2 bg-violet-500 rounded-full mb-2"></div>
-                            <p class="text-sm font-medium">Focus & Clarity</p>
-                        </div>
-                        <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
-                            <div class="w-2 h-2 bg-violet-500 rounded-full mb-2"></div>
-                            <p class="text-sm font-medium">Memory Enhancement</p>
-                        </div>
-                        <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
-                            <div class="w-2 h-2 bg-violet-500 rounded-full mb-2"></div>
-                            <p class="text-sm font-medium">Stress Resilience</p>
-                        </div>
-                        <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
-                            <div class="w-2 h-2 bg-violet-500 rounded-full mb-2"></div>
-                            <p class="text-sm font-medium">Mental Energy</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="tab-body" class="tab-content hidden">
-                    <div class="flex items-start space-x-4 mb-6">
-                        <svg class="w-10 h-10 text-violet-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                        </svg>
-                        <div>
-                            <h3 class="text-3xl font-bold mb-2">Body</h3>
-                            <p class="text-lg text-slate-300">Science-backed adaptogens and nutrients that support your body's natural rhythms and recovery.</p>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-                        <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
-                            <div class="w-2 h-2 bg-violet-500 rounded-full mb-2"></div>
-                            <p class="text-sm font-medium">Energy Balance</p>
-                        </div>
-                        <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
-                            <div class="w-2 h-2 bg-violet-500 rounded-full mb-2"></div>
-                            <p class="text-sm font-medium">Immune Support</p>
-                        </div>
-                        <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
-                            <div class="w-2 h-2 bg-violet-500 rounded-full mb-2"></div>
-                            <p class="text-sm font-medium">Recovery</p>
-                        </div>
-                        <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
-                            <div class="w-2 h-2 bg-violet-500 rounded-full mb-2"></div>
-                            <p class="text-sm font-medium">Endurance</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="tab-spirit" class="tab-content hidden">
-                    <div class="flex items-start space-x-4 mb-6">
-                        <svg class="w-10 h-10 text-violet-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                        </svg>
-                        <div>
-                            <h3 class="text-3xl font-bold mb-2">Spirit</h3>
-                            <p class="text-lg text-slate-300">Holistic wellness through the mind-body connection. Find your center, maintain your edge.</p>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-                        <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
-                            <div class="w-2 h-2 bg-violet-500 rounded-full mb-2"></div>
-                            <p class="text-sm font-medium">Mood Balance</p>
-                        </div>
-                        <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
-                            <div class="w-2 h-2 bg-violet-500 rounded-full mb-2"></div>
-                            <p class="text-sm font-medium">Sleep Quality</p>
-                        </div>
-                        <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
-                            <div class="w-2 h-2 bg-violet-500 rounded-full mb-2"></div>
-                            <p class="text-sm font-medium">Calm Focus</p>
-                        </div>
-                        <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
-                            <div class="w-2 h-2 bg-violet-500 rounded-full mb-2"></div>
-                            <p class="text-sm font-medium">Well-being</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Circadian Science Section -->
-    <section class="py-20 px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <div class="inline-flex items-center space-x-2 bg-amber-500/10 border border-amber-500/20 rounded-full px-4 py-2 mb-6">
-                        <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                        </svg>
-                        <span class="text-sm text-amber-300">Circadian Science</span>
-                    </div>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                        Your Brain Works Differently at 9AM Than 9PM
-                    </h2>
-                    <p class="text-lg text-slate-300 mb-8 leading-relaxed">
-                        Most supplements ignore your body's natural rhythms. We don't. BalanceEQ offers morning and night formulas engineered to work with your circadian biology, not against it.
-                    </p>
-                    <div class="space-y-4">
-                        <div class="flex items-start space-x-3">
-                            <div class="w-6 h-6 rounded-full bg-violet-600 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <span class="text-xs font-bold">✓</span>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-1">Therapeutic Doses</h4>
-                                <p class="text-slate-400 text-sm">Not marketing doses. Real amounts backed by research.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-3">
-                            <div class="w-6 h-6 rounded-full bg-violet-600 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <span class="text-xs font-bold">✓</span>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-1">Premium Ingredients</h4>
-                                <p class="text-slate-400 text-sm">Standardized extracts, specific forms, no fillers.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-3">
-                            <div class="w-6 h-6 rounded-full bg-violet-600 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <span class="text-xs font-bold">✓</span>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-1">Transparent Formulation</h4>
-                                <p class="text-slate-400 text-sm">Every ingredient listed. Every dose disclosed.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="relative">
-                    <div class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8">
-                        <div class="space-y-6">
-                            <div class="bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-500/30 rounded-2xl p-6">
-                                <div class="flex items-center space-x-3 mb-4">
-                                    <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                                    </svg>
-                                    <h3 class="text-xl font-bold">Morning Formula</h3>
-                                </div>
-                                <p class="text-slate-300 text-sm mb-4">Optimized for alertness, focus, and mental energy when cortisol naturally peaks.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">Lion's Mane</span>
-                                    <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">Rhodiola</span>
-                                    <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">L-Theanine</span>
-                                    <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">Bacopa</span>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-gradient-to-r from-indigo-500/20 to-purple-500/20 border border-indigo-500/30 rounded-2xl p-6">
-                                <div class="flex items-center space-x-3 mb-4">
-                                    <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-                                    </svg>
-                                    <h3 class="text-xl font-bold">Night Formula</h3>
-                                </div>
-                                <p class="text-slate-300 text-sm mb-4">Engineered for recovery, stress resilience, and preparation for deep sleep.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">Ashwagandha</span>
-                                    <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">Magnesium</span>
-                                    <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">L-Glycine</span>
-                                    <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">Reishi</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Founder Story Section -->
-    <!-- EDIT YOUR STORY HERE -->
-    <section id="story" class="py-20 px-4 bg-slate-900/50">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-8">The Journey to Balance</h2>
-            <div class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 md:p-12">
-                <p class="text-lg text-slate-300 mb-6 leading-relaxed">
-                    Balasana started as a dream to create wellness apparel that embodied balance and mindfulness. The name itself—Sanskrit for "child's pose"—represented our commitment to finding equilibrium in an increasingly chaotic world.
-                </p>
-                <p class="text-lg text-slate-300 mb-6 leading-relaxed">
-                    But as we researched materials, spoke with customers, and dug deeper into wellness science, we realized something fundamental: true balance doesn't start with what you wear. It starts with what fuels you from within.
-                </p>
-                <p class="text-lg text-slate-300 mb-8 leading-relaxed">
-                    That realization led us here. BalanceEQ represents our evolution—bringing the same obsessive attention to quality, the same commitment to authenticity, and the same pursuit of balance to cognitive wellness and performance nutrition.
-                </p>
-                <div class="border-t border-slate-700 pt-8">
-                    <p class="text-violet-400 font-semibold text-lg">The mission remains the same:</p>
-                    <p class="text-2xl font-bold mt-2">Help you find your balance, from the inside out.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="py-20 px-4">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">Coming 2026</h2>
-            <p class="text-xl text-slate-300 mb-12 max-w-2xl mx-auto">
-                We're building something exceptional. BalanceEQ supplements launching Q1 2026, followed by exercise nutrition and curated meal plans.
-            </p>
-            
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-violet-500/50 transition-all">
-                    <svg class="w-12 h-12 text-violet-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                    </svg>
-                    <h3 class="text-xl font-bold mb-2">BalanceEQ Nootropics</h3>
-                    <p class="text-slate-400">Circadian-optimized cognitive enhancement for peak performance.</p>
-                    <p class="text-violet-400 text-sm mt-4 font-semibold">Q1 2026</p>
-                </div>
-                
-                <div class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-violet-500/50 transition-all">
-                    <svg class="w-12 h-12 text-fuchsia-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                    </svg>
-                    <h3 class="text-xl font-bold mb-2">Performance Series</h3>
-                    <p class="text-slate-400">Exercise supplements engineered for recovery and endurance.</p>
-                    <p class="text-slate-400 text-sm mt-4 font-semibold">Q3 2026</p>
-                </div>
-                
-                <div class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-violet-500/50 transition-all">
-                    <svg class="w-12 h-12 text-amber-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                    </svg>
-                    <h3 class="text-xl font-bold mb-2">Meal Plans</h3>
-                    <p class="text-slate-400">Curated nutrition plans designed for optimal cognitive and physical performance.</p>
-                    <p class="text-slate-400 text-sm mt-4 font-semibold">Q4 2026</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Email Capture Section -->
-    <section id="signup" class="py-20 px-4 bg-gradient-to-br from-violet-900/20 to-fuchsia-900/20">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">Join the Movement</h2>
-            <p class="text-xl text-slate-300 mb-8">
-                Be among the first to experience BalanceEQ when we launch. Get early access and exclusive founder's pricing.
-            </p>
-            <form class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-                <input 
-                    type="email" 
-                    placeholder="Enter your email"
-                    class="px-6 py-4 bg-slate-800/50 border border-slate-700 rounded-lg focus:outline-none focus:border-violet-500 transition-colors flex-1 max-w-md text-white"
-                    required
-                />
-                <button type="submit" class="bg-gradient-to-r from-violet-600 to-fuchsia-600 px-8 py-4 rounded-lg font-semibold hover:shadow-2xl hover:shadow-violet-500/50 transition-all">
-                    Get Early Access
-                </button>
-            </form>
-            <p class="text-sm text-slate-400">Join 2,847 others waiting for launch</p>
-        </div>
-    </section>
+    </div>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-800 py-12 px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-10 h-10 bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-lg flex items-center justify-center">
-                            <span class="text-white font-bold text-xl">B</span>
-                        </div>
-                        <div>
-                            <div class="text-xl font-bold">Balasana</div>
-                            <div class="text-xs text-slate-400">WELLNESS</div>
-                        </div>
-                    </div>
-                    <p class="text-sm text-slate-400">Balance from the inside out.</p>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4">Company</h4>
-                    <ul class="space-y-2 text-sm text-slate-400">
-                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="#story" class="hover:text-white transition-colors">Our Story</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4">Resources</h4>
-                    <ul class="space-y-2 text-sm text-slate-400">
-                        <li><a href="#science" class="hover:text-white transition-colors">The Science</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Ingredients</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Research</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4">Support</h4>
-                    <ul class="space-y-2 text-sm text-slate-400">
-                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Shipping</a></li>
-                    </ul>
-                </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Balasana</h4>
+                <p style="color: #64748b; font-size: 0.875rem;">Balance from the inside out</p>
             </div>
             
-            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-sm text-slate-400">© 2025 Balasana LLC. All rights reserved.</p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">Privacy</a>
-                    <a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">Terms</a>
-                    <a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">Accessibility</a>
-                </div>
+            <div class="footer-section">
+                <h4>Products</h4>
+                <ul>
+                    <li><a onclick="showPage('products')">BalanceEQ Line</a></li>
+                    <li><a onclick="scrollToBundles()">Bundles & Packs</a></li>
+                    <li><a onclick="showPage('ingredients')">Ingredients</a></li>
+                </ul>
             </div>
+            
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a onclick="showPage('story')">Our Story</a></li>
+                    <li><a href="mailto:founder@balanceeq.com">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 Balasana LLC. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- Subscription Modal -->
+    <div id="subscribeModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <h3 id="modalTitle">Get Notified</h3>
+            <p>Enter your email to be notified when this product launches. You'll also get exclusive early-bird pricing.</p>
+            
+            <!-- REPLACE THIS URL WITH YOUR MICROSOFT FORMS LINK -->
+            <form action="https://forms.office.com/Pages/ResponsePage.aspx?id=YOUR_FORM_ID" method="post" target="_blank">
+                <input type="hidden" id="productName" name="product" value="">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <input type="text" name="name" placeholder="Your name (optional)">
+                <button type="submit" class="subscribe-btn">Notify Me</button>
+            </form>
+        </div>
+    </div>
+
     <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('nav-scrolled');
-            } else {
-                navbar.classList.remove('nav-scrolled');
+        // Ingredient database (loaded from your Notion data)
+        const ingredientDatabase = {
+            'Citicoline': {
+                category: 'Nootropic',
+                dose: '250mg',
+                claim: 'Focus and attention; acetylcholine synthesis',
+                range: '250-500mg',
+                studies: [
+                    'https://doi.org/10.3390/nu15020386',
+                    'https://www.scirp.org/journal/paperinformation.aspx?paperid=19921'
+                ],
+                products: ['EQ:Focus']
+            },
+            'L-Theanine': {
+                category: 'Amino Acid',
+                dose: '150-200mg',
+                claim: 'Calm focus; alpha wave production; relaxation',
+                range: '100-200mg',
+                studies: [
+                    'https://doi.org/10.1016/S0924-2244(99)00044-8',
+                    'https://doi.org/10.3390/nu11102362'
+                ],
+                products: ['EQ:Focus', 'EQ:Restore']
+            },
+            'Ashwagandha': {
+                category: 'Adaptogen',
+                dose: '300mg',
+                claim: 'Stress resilience; cortisol modulation',
+                range: '300-600mg',
+                studies: [
+                    'https://doi.org/10.1186/1472-6882-12-70',
+                    'https://doi.org/10.1097/MD.0000000000017436'
+                ],
+                products: ['EQ:Restore']
+            },
+            'Magnesium L-Threonate': {
+                category: 'Mineral',
+                dose: '1000mg',
+                claim: 'Sleep quality; memory consolidation; brain magnesium',
+                range: '1500-2000mg',
+                studies: [
+                    'https://doi.org/10.1016/j.neuron.2009.12.026',
+                    'https://doi.org/10.3390/nu7095388'
+                ],
+                products: ['EQ:Restore']
+            },
+            "Lion's Mane": {
+                category: 'Nootropic',
+                dose: '500mg',
+                claim: 'Nerve growth factor; cognitive support',
+                range: '500-3000mg',
+                studies: [
+                    'https://doi.org/10.1002/ptr.2634',
+                    'https://doi.org/10.2220/biomedres.40.125'
+                ],
+                products: ['EQ:Focus']
+            },
+            'Rhodiola': {
+                category: 'Adaptogen',
+                dose: '150mg',
+                claim: 'Mental fatigue resistance; stress adaptation',
+                range: '200-600mg',
+                studies: [
+                    'https://doi.org/10.1186/1472-6882-12-70',
+                    'https://doi.org/10.1002/ptr.3712'
+                ],
+                products: ['EQ:Focus']
+            },
+            'NALT': {
+                category: 'Amino Acid',
+                dose: '300mg',
+                claim: 'Dopamine precursor; mental energy under stress',
+                range: '500-2000mg',
+                studies: [
+                    'https://doi.org/10.1016/S0361-9230(98)00163-4',
+                    'https://doi.org/10.1016/j.jpsychires.2015.08.014'
+                ],
+                products: ['EQ:Focus']
+            },
+            'NR': {
+                category: 'NAD+ Precursor',
+                dose: '250mg',
+                claim: 'Cellular energy metabolism; NAD+ support',
+                range: '250-500mg',
+                studies: [
+                    'https://doi.org/10.1016/j.cmet.2012.04.022',
+                    'https://doi.org/10.1038/ncomms3486'
+                ],
+                products: ['EQ:Focus']
+            },
+            'Bacopa': {
+                category: 'Nootropic',
+                dose: '300mg',
+                claim: 'Memory consolidation; learning support',
+                range: '300-450mg',
+                studies: [
+                    'https://doi.org/10.1089/jmf.2008.0018',
+                    'https://doi.org/10.1002/ptr.5413'
+                ],
+                products: ['EQ:Restore']
+            },
+            'Phosphatidylserine': {
+                category: 'Phospholipid',
+                dose: '150mg',
+                claim: 'Cortisol management; cognitive support',
+                range: '100-300mg',
+                studies: [
+                    'https://doi.org/10.1080/09637480120092066',
+                    'https://doi.org/10.1111/j.1600-0838.2006.00531.x'
+                ],
+                products: ['EQ:Restore']
+            },
+            'Saffron': {
+                category: 'Botanical',
+                dose: '28mg',
+                claim: 'Mood support; sleep quality',
+                range: '28-30mg',
+                studies: [
+                    'https://doi.org/10.1016/j.jad.2016.11.008',
+                    'https://doi.org/10.1089/act.2018.29160.ssa'
+                ],
+                products: ['EQ:Restore']
+            },
+            'Apigenin': {
+                category: 'Flavonoid',
+                dose: '25mg',
+                claim: 'Sleep initiation; GABA receptor modulation',
+                range: '25-50mg',
+                studies: [
+                    'https://doi.org/10.1016/j.pharmthera.2018.03.002',
+                    'https://doi.org/10.3390/molecules25030589'
+                ],
+                products: ['EQ:Restore']
+            },
+            'Uridine': {
+                category: 'Nucleotide',
+                dose: '150mg',
+                claim: 'Dopamine synthesis; neural membrane support',
+                range: '500-1000mg',
+                studies: [
+                    'https://doi.org/10.1016/j.brainresrev.2005.05.002'
+                ],
+                products: ['EQ:Drive']
+            },
+            'ALCAR': {
+                category: 'Amino Acid',
+                dose: '500mg',
+                claim: 'Mitochondrial energy; acetylcholine support',
+                range: '500-2000mg',
+                studies: [
+                    'https://doi.org/10.1002/hup.2682',
+                    'https://doi.org/10.1016/j.neurobiolaging.2006.12.019'
+                ],
+                products: ['EQ:Drive']
+            },
+            'Pine Bark': {
+                category: 'Antioxidant',
+                dose: '100mg',
+                claim: 'Blood flow; cognitive support',
+                range: '100-200mg',
+                studies: [
+                    'https://doi.org/10.1089/jmf.2014.0003',
+                    'https://doi.org/10.2174/1871527314666150202145424'
+                ],
+                products: ['EQ:Drive']
+            },
+            'CoQ10': {
+                category: 'Antioxidant',
+                dose: '100mg',
+                claim: 'Mitochondrial function; cellular energy',
+                range: '90-200mg',
+                studies: [
+                    'https://doi.org/10.1089/act.2009.15312',
+                    'https://doi.org/10.3390/nu10020168'
+                ],
+                products: ['EQ:Drive']
+            },
+            'PQQ': {
+                category: 'Antioxidant',
+                dose: '10mg',
+                claim: 'Mitochondrial biogenesis; neuroprotection',
+                range: '10-20mg',
+                studies: [
+                    'https://doi.org/10.1089/rej.2012.1397',
+                    'https://doi.org/10.1016/j.freeradbiomed.2007.12.004'
+                ],
+                products: ['EQ:Drive']
+            },
+            'NAC': {
+                category: 'Amino Acid',
+                dose: '600mg',
+                claim: 'Glutathione precursor; antioxidant support',
+                range: '600-1800mg',
+                studies: [
+                    'https://doi.org/10.1016/j.biopha.2018.04.003',
+                    'https://doi.org/10.1016/j.pnpbp.2015.11.016'
+                ],
+                products: ['EQ:Drive']
+            },
+            'Vitamin D3': {
+                category: 'Vitamin',
+                dose: '2000 IU',
+                claim: 'Immune function; bone health; mood',
+                range: '1000-4000 IU',
+                studies: [
+                    'https://doi.org/10.1093/nutrit/nux058',
+                    'https://doi.org/10.1080/19390211.2017.1417134'
+                ],
+                products: ['EQ:Foundations']
+            },
+            'Vitamin K2': {
+                category: 'Vitamin',
+                dose: '100µg',
+                claim: 'Calcium regulation; cardiovascular health',
+                range: '90-180µg',
+                studies: [
+                    'https://doi.org/10.1159/000510911',
+                    'https://doi.org/10.3945/an.115.010918'
+                ],
+                products: ['EQ:Foundations']
+            },
+            'Omega-3': {
+                category: 'Fatty Acid',
+                dose: 'EPA 900mg / DHA 600mg',
+                claim: 'Brain health; cardiovascular support; inflammation',
+                range: '1000-3000mg combined',
+                studies: [
+                    'https://doi.org/10.1017/S0007114512001493',
+                    'https://doi.org/10.3945/ajcn.111.023523'
+                ],
+                products: ['EQ:Foundations']
+            },
+            'Curcumin': {
+                category: 'Polyphenol',
+                dose: '150mg',
+                claim: 'Inflammatory response; joint comfort',
+                range: '500-2000mg',
+                studies: [
+                    'https://doi.org/10.1016/j.jcm.2016.02.012',
+                    'https://doi.org/10.1089/jmf.2006.9.503'
+                ],
+                products: ['EQ:Shield']
+            },
+            'Quercetin': {
+                category: 'Flavonoid',
+                dose: '120mg',
+                claim: 'Antioxidant; immune support',
+                range: '500-1000mg',
+                studies: [
+                    'https://doi.org/10.3390/nu12020348',
+                    'https://doi.org/10.3390/ijms17091123'
+                ],
+                products: ['EQ:Shield']
+            },
+            'Resveratrol': {
+                category: 'Polyphenol',
+                dose: '60mg',
+                claim: 'Longevity; cardiovascular support',
+                range: '150-500mg',
+                studies: [
+                    'https://doi.org/10.1111/j.1755-5922.2009.00124.x',
+                    'https://doi.org/10.1016/j.arr.2016.03.009'
+                ],
+                products: ['EQ:Shield']
+            },
+            'Ginger': {
+                category: 'Botanical',
+                dose: '60mg',
+                claim: 'Inflammatory response; digestive support',
+                range: '1000-3000mg',
+                studies: [
+                    'https://doi.org/10.1016/j.jep.2018.11.023',
+                    'https://doi.org/10.1089/jmf.2005.8.125'
+                ],
+                products: ['EQ:Shield']
+            },
+            'Boswellia': {
+                category: 'Botanical',
+                dose: '60mg',
+                claim: 'Joint comfort; inflammatory response',
+                range: '300-500mg',
+                studies: [
+                    'https://doi.org/10.1002/ptr.1985',
+                    'https://doi.org/10.1016/j.phymed.2003.07.004'
+                ],
+                products: ['EQ:Shield']
+            },
+            'Lutein': {
+                category: 'Carotenoid',
+                dose: '10mg',
+                claim: 'Macular health; visual performance',
+                range: '6-20mg',
+                studies: [
+                    'https://doi.org/10.1001/archophthalmol.2011.213',
+                    'https://doi.org/10.1111/j.1475-1313.2012.00911.x'
+                ],
+                products: ['EQ:Vision']
+            },
+            'Zeaxanthin': {
+                category: 'Carotenoid',
+                dose: '2mg',
+                claim: 'Blue light protection; retinal health',
+                range: '2-4mg',
+                studies: [
+                    'https://doi.org/10.1001/archophthalmol.2011.213',
+                    'https://doi.org/10.1111/j.1475-1313.2012.00911.x'
+                ],
+                products: ['EQ:Vision']
+            },
+            'Astaxanthin': {
+                category: 'Carotenoid',
+                dose: '4mg',
+                claim: 'Eye fatigue; visual acuity',
+                range: '4-12mg',
+                studies: [
+                    'https://doi.org/10.1089/jmf.2012.2389',
+                    'https://doi.org/10.1080/09168451.2017.1338117'
+                ],
+                products: ['EQ:Vision']
+            },
+            'Bilberry': {
+                category: 'Botanical',
+                dose: '80mg (36% anthocyanins)',
+                claim: 'Night vision; eye circulation',
+                range: '80-480mg',
+                studies: [
+                    'https://doi.org/10.3109/02713683.2011.605770',
+                    'https://doi.org/10.1007/s11130-005-9001-7'
+                ],
+                products: ['EQ:Vision']
+            },
+            'Blackcurrant': {
+                category: 'Botanical',
+                dose: '80mg (35%)',
+                claim: 'Eye fatigue; dark adaptation',
+                range: '50-240mg',
+                studies: [
+                    'https://doi.org/10.1155/2012/132737',
+                    'https://doi.org/10.1089/jmf.2015.0053'
+                ],
+                products: ['EQ:Vision']
+            }
+        };
+
+        // Navigation
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        // Scroll to bundles section
+        function scrollToBundles() {
+            showPage('products');
+            setTimeout(() => {
+                const bundlesSection = document.querySelector('.product-section:last-of-type');
+                if (bundlesSection) {
+                    bundlesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 100);
+        }
+
+        // Show ingredient detail
+        function showIngredient(ingredientName) {
+            const data = ingredientDatabase[ingredientName];
+            if (!data) {
+                alert('Ingredient information coming soon!');
+                return;
+            }
+
+            document.getElementById('ingredientName').textContent = ingredientName;
+            document.getElementById('ingredientClaim').textContent = data.claim;
+            document.getElementById('ingredientCategory').textContent = data.category;
+            document.getElementById('ingredientDose').textContent = data.dose;
+            document.getElementById('ingredientRange').textContent = data.range;
+
+            // Study links
+            const studyLinksDiv = document.getElementById('studyLinks');
+            studyLinksDiv.innerHTML = data.studies.map(url => 
+                `<a href="${url}" class="study-link" target="_blank">${url}</a>`
+            ).join('');
+
+            // Related products
+            const productsDiv = document.getElementById('relatedProducts');
+            productsDiv.innerHTML = data.products.map(product => 
+                `<span class="ingredient-tag" style="display: inline-block; margin: 0.5rem 0.5rem 0 0;">${product}</span>`
+            ).join('');
+
+            showPage('ingredientDetail');
+        }
+
+        // Modal
+        function openModal(productName) {
+            document.getElementById('modalTitle').textContent = `Get Notified: ${productName}`;
+            document.getElementById('productName').value = productName;
+            document.getElementById('subscribeModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('subscribeModal').classList.remove('active');
+        }
+
+        // Close modal on outside click
+        document.getElementById('subscribeModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
             }
         });
 
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        mobileMenuBtn.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.add('hidden');
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             });
         });
-
-        // Tab functionality
-        function showTab(tabName) {
-            // Hide all tab contents
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.classList.add('hidden'));
-            
-            // Show selected tab
-            document.getElementById('tab-' + tabName).classList.remove('hidden');
-            
-            // Update tab button styles
-            const buttons = document.querySelectorAll('.tab-button');
-            buttons.forEach(button => {
-                button.classList.remove('active');
-                const icon = button.querySelector('svg');
-                icon.classList.remove('text-violet-400');
-                icon.classList.add('text-slate-400');
-            });
-            
-            // Activate clicked button
-            event.currentTarget.classList.add('active');
-            const activeIcon = event.currentTarget.querySelector('svg');
-            activeIcon.classList.remove('text-slate-400');
-            activeIcon.classList.add('text-violet-400');
-        }
     </script>
-
 </body>
 </html>
