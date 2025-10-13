@@ -34,10 +34,10 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(15, 23, 42, 0.8);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 1rem 2rem;
+            padding: 1.25rem 2rem;
             border-bottom: 1px solid rgba(139, 92, 246, 0.2);
         }
         
@@ -57,8 +57,15 @@
         }
         
         .logo-img {
-            height: 40px;
+            height: 50px;
             width: auto;
+            filter: brightness(1.1);
+        }
+        
+        @media (min-width: 768px) {
+            .logo-img {
+                height: 60px;
+            }
         }
         
         .logo-text {
@@ -529,15 +536,16 @@
     <nav>
         <div class="nav-container">
             <div class="logo" onclick="showPage('home')">
-                <!-- Replace 'balasana-logo.png' with your actual logo filename -->
-                <img src="balasana-logo.png" alt="Balasana" class="logo-img">
+                <!-- Logo will appear here once you add balasana-logo.png to the folder -->
+                <img src="balasana-logo.png" alt="Balasana" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span class="logo-text" style="display: none;">BALASANA</span>
             </div>
             <ul class="nav-links">
                 <li><a onclick="showPage('home')">Home</a></li>
                 <li><a onclick="showPage('products')">Products</a></li>
                 <li><a onclick="scrollToBundles()">Bundles</a></li>
                 <li><a onclick="showPage('story')">Our Story</a></li>
-                <li><a onclick="showPage('ingredients')">Ingredients</a></li>
+                <li><a onclick="showPage('transparency')">Transparency</a></li>
             </ul>
         </div>
     </nav>
@@ -947,8 +955,288 @@
         </div>
     </div>
 
-    <!-- INGREDIENTS PAGE -->
+    <!-- TRANSPARENCY PAGE -->
+    <div id="transparency" class="page">
+        <div class="hero">
+            <h1>Complete Transparency</h1>
+            <p class="subtitle">No proprietary blends. No hidden ingredients. Every dose disclosed, every claim backed by research.</p>
+        </div>
+        
+        <!-- Transparency Commitment -->
+        <div class="story-container" style="max-width: 900px;">
+            <h3 style="margin-bottom: 1rem;">Our Commitment</h3>
+            <p>
+                We believe you deserve to know exactly what you're putting in your body. That's why we publish complete transparency reports including:
+            </p>
+            <ul style="color: #cbd5e1; margin: 1rem 0 1rem 2rem; line-height: 1.8;">
+                <li><strong>Full ingredient disclosure</strong> - Every ingredient, every dose, no proprietary blends</li>
+                <li><strong>Clinical research</strong> - Direct links to peer-reviewed studies</li>
+                <li><strong>Third-party testing</strong> - Independent verification of purity and potency</li>
+                <li><strong>Manufacturing standards</strong> - cGMP certified facilities with FDA registration</li>
+            </ul>
+        </div>
+
+        <!-- Testing & Quality Section -->
+        <section style="margin: 4rem 0;">
+            <h2>Testing & Quality Assurance</h2>
+            <p style="text-align: center; color: #94a3b8; max-width: 800px; margin: 0 auto 3rem;">
+                Every batch undergoes rigorous testing before reaching you. We don't just meet standards—we exceed them.
+            </p>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-icon">🔬</div>
+                    <h3>Third-Party Testing</h3>
+                    <p style="margin-bottom: 1rem;">Independent laboratory verification of every batch:</p>
+                    <ul style="color: #94a3b8; font-size: 0.875rem; padding-left: 1.5rem; margin-bottom: 1rem;">
+                        <li>Heavy metals (Pb, Cd, As, Hg)</li>
+                        <li>Microbial contamination</li>
+                        <li>Pesticide residues</li>
+                        <li>Potency verification</li>
+                        <li>Identity testing</li>
+                    </ul>
+                    <p style="color: #8b5cf6; font-size: 0.875rem; font-weight: 600;">
+                        Certificates of Analysis available for all products
+                    </p>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-icon">✓</div>
+                    <h3>In-House Quality Control</h3>
+                    <p style="margin-bottom: 1rem;">Our manufacturers perform multiple quality checks:</p>
+                    <ul style="color: #94a3b8; font-size: 0.875rem; padding-left: 1.5rem; margin-bottom: 1rem;">
+                        <li>Raw material verification</li>
+                        <li>In-process testing</li>
+                        <li>Finished product analysis</li>
+                        <li>Stability testing</li>
+                        <li>Batch record documentation</li>
+                    </ul>
+                    <p style="color: #8b5cf6; font-size: 0.875rem; font-weight: 600;">
+                        Full traceability from ingredient to bottle
+                    </p>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-icon">🏆</div>
+                    <h3>Certifications</h3>
+                    <p style="margin-bottom: 1rem;">Industry-leading standards and certifications:</p>
+                    <ul style="color: #94a3b8; font-size: 0.875rem; padding-left: 1.5rem; margin-bottom: 1rem;">
+                        <li>cGMP Certified Facility</li>
+                        <li>FDA Registered</li>
+                        <li>NSF Certified (pending)</li>
+                        <li>ISO 9001:2015 (pending)</li>
+                        <li>Informed Choice (pending)</li>
+                    </ul>
+                    <p style="color: #8b5cf6; font-size: 0.875rem; font-weight: 600;">
+                        Certification documents available upon request
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Test Results Section -->
+        <section style="margin: 4rem 0;">
+            <div style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1)); border: 2px solid rgba(139, 92, 246, 0.3); border-radius: 1.5rem; padding: 3rem; max-width: 900px; margin: 0 auto;">
+                <h2 style="margin-bottom: 1rem;">📋 Access Test Results</h2>
+                <p style="color: #cbd5e1; margin-bottom: 2rem;">
+                    We publish third-party Certificates of Analysis (CoA) for every batch. Each CoA includes complete testing results for purity, potency, and contaminants.
+                </p>
+                <div style="background: rgba(15, 23, 42, 0.5); padding: 2rem; border-radius: 1rem; margin-bottom: 1.5rem;">
+                    <h4 style="margin-bottom: 0.5rem; color: #8b5cf6;">How to Access Your Batch Results:</h4>
+                    <ol style="color: #cbd5e1; padding-left: 1.5rem; margin-top: 1rem; line-height: 1.8;">
+                        <li>Find the batch number on your bottle label</li>
+                        <li>Enter it in the form below</li>
+                        <li>Download the complete CoA and test results</li>
+                    </ol>
+                </div>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <input 
+                        type="text" 
+                        placeholder="Enter batch number (e.g., EQF-2026-001)" 
+                        style="flex: 1; min-width: 250px; padding: 1rem; border-radius: 0.5rem; border: 1px solid rgba(139, 92, 246, 0.3); background: rgba(15, 23, 42, 0.8); color: white;"
+                    >
+                    <button class="subscribe-btn" style="width: auto; padding: 1rem 2rem;" onclick="alert('Test results portal coming Q1 2026. All CoAs will be publicly accessible.')">
+                        View Test Results
+                    </button>
+                </div>
+                <p style="color: #94a3b8; font-size: 0.875rem; margin-top: 1rem;">
+                    <strong>Coming Q1 2026:</strong> Full test results portal launches with first product batch
+                </p>
+            </div>
+        </section>
+
+        <!-- Complete Ingredient Database -->
+        <section style="margin: 4rem 0;">
+            <h2>Complete Ingredient Database</h2>
+            <p style="text-align: center; color: #94a3b8; max-width: 800px; margin: 0 auto 3rem;">
+                Click any ingredient to see research, dosing rationale, and specific form used.
+            </p>
+            
+            <!-- EQ:Focus Ingredients -->
+            <div style="margin-bottom: 3rem;">
+                <h3 style="text-align: center; margin-bottom: 2rem; color: #fbbf24;">☀️ EQ:Focus Ingredients</h3>
+                <div class="product-grid">
+                    <div class="product-card" onclick="showIngredient('Citicoline')">
+                        <h4 style="color: #a78bfa;">Citicoline</h4>
+                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">250mg</p>
+                        <p style="font-size: 0.875rem; color: #94a3b8;">Cognizin® branded form</p>
+                        <p style="margin-top: 1rem;">Focus and attention; acetylcholine synthesis</p>
+                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
+                    </div>
+                    
+                    <div class="product-card" onclick="showIngredient('Lion\'s Mane')">
+                        <h4 style="color: #a78bfa;">Lion's Mane</h4>
+                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">500mg</p>
+                        <p style="font-size: 0.875rem; color: #94a3b8;">30% polysaccharides</p>
+                        <p style="margin-top: 1rem;">Nerve growth factor; cognitive support</p>
+                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
+                    </div>
+                    
+                    <div class="product-card" onclick="showIngredient('Rhodiola')">
+                        <h4 style="color: #a78bfa;">Rhodiola rosea</h4>
+                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">150mg</p>
+                        <p style="font-size: 0.875rem; color: #94a3b8;">3% rosavins, 1% salidroside</p>
+                        <p style="margin-top: 1rem;">Mental fatigue resistance; stress adaptation</p>
+                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
+                    </div>
+                    
+                    <div class="product-card" onclick="showIngredient('NALT')">
+                        <h4 style="color: #a78bfa;">N-Acetyl L-Tyrosine</h4>
+                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">300mg</p>
+                        <p style="font-size: 0.875rem; color: #94a3b8;">Pharmaceutical grade</p>
+                        <p style="margin-top: 1rem;">Dopamine precursor; mental energy under stress</p>
+                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
+                    </div>
+                    
+                    <div class="product-card" onclick="showIngredient('L-Theanine')">
+                        <h4 style="color: #a78bfa;">L-Theanine</h4>
+                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">150mg</p>
+                        <p style="font-size: 0.875rem; color: #94a3b8;">Suntheanine® branded form</p>
+                        <p style="margin-top: 1rem;">Calm focus; alpha wave production</p>
+                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
+                    </div>
+                    
+                    <div class="product-card" onclick="showIngredient('NR')">
+                        <h4 style="color: #a78bfa;">Nicotinamide Riboside</h4>
+                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">250mg</p>
+                        <p style="font-size: 0.875rem; color: #94a3b8;">Niagen® branded form</p>
+                        <p style="margin-top: 1rem;">Cellular energy metabolism; NAD+ support</p>
+                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- EQ:Restore Ingredients -->
+            <div style="margin-bottom: 3rem;">
+                <h3 style="text-align: center; margin-bottom: 2rem; color: #818cf8;">🌙 EQ:Restore Ingredients</h3>
+                <div class="product-grid">
+                    <div class="product-card" onclick="showIngredient('Magnesium L-Threonate')">
+                        <h4 style="color: #a78bfa;">Magnesium L-Threonate</h4>
+                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">1000mg</p>
+                        <p style="font-size: 0.875rem; color: #94a3b8;">Magtein® branded form</p>
+                        <p style="margin-top: 1rem;">Sleep quality; memory consolidation; brain magnesium</p>
+                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
+                    </div>
+                    
+                    <div class="product-card" onclick="showIngredient('Ashwagandha')">
+                        <h4 style="color: #a78bfa;">Ashwagandha</h4>
+                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">300mg</p>
+                        <p style="font-size: 0.875rem; color: #94a3b8;">KSM-66® branded form</p>
+                        <p style="margin-top: 1rem;">Stress resilience; cortisol modulation</p>
+                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
+                    </div>
+                    
+                    <div class="product-card" onclick="showIngredient('Bacopa')">
+                        <h4 style="color: #a78bfa;">Bacopa monnieri</h4>
+                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">300mg</p>
+                        <p style="font-size: 0.875rem; color: #94a3b8;">50% bacosides</p>
+                        <p style="margin-top: 1rem;">Memory consolidation; learning support</p>
+                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
+                    </div>
+                    
+                    <div class="product-card" onclick="showIngredient('L-Theanine')">
+                        <h4 style="color: #a78bfa;">L-Theanine</h4>
+                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">200mg</p>
+                        <p style="font-size: 0.875rem; color: #94a3b8;">Suntheanine® branded form</p>
+                        <p style="margin-top: 1rem;">Relaxation; GABA modulation</p>
+                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
+                    </div>
+                    
+                    <div class="product-card" onclick="showIngredient('Phosphatidylserine')">
+                        <h4 style="color: #a78bfa;">Phosphatidylserine</h4>
+                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">150mg</p>
+                        <p style="font-size: 0.875rem; color: #94a3b8;">Sharp-PS® Green from sunflower</p>
+                        <p style="margin-top: 1rem;">Cortisol management; cognitive support</p>
+                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
+                    </div>
+                    
+                    <div class="product-card" onclick="showIngredient('Saffron')">
+                        <h4 style="color: #a78bfa;">Saffron Extract</h4>
+                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">28mg</p>
+                        <p style="font-size: 0.875rem; color: #94a3b8;">affron® branded form</p>
+                        <p style="margin-top: 1rem;">Mood support; sleep quality</p>
+                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
+                    </div>
+                    
+                    <div class="product-card" onclick="showIngredient('Apigenin')">
+                        <h4 style="color: #a78bfa;">Apigenin</h4>
+                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">25mg</p>
+                        <p style="font-size: 0.875rem; color: #94a3b8;">98% pure from chamomile</p>
+                        <p style="margin-top: 1rem;">Sleep initiation; GABA receptor modulation</p>
+                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Phase 2 Products Note -->
+            <div style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(51, 65, 85, 0.3)); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 1.5rem; padding: 2rem; text-align: center; max-width: 800px; margin: 3rem auto;">
+                <p style="color: #cbd5e1;">
+                    <strong style="color: #8b5cf6;">Complete transparency for all products:</strong><br>
+                    Full ingredient databases for EQ:Drive, EQ:Foundations, EQ:Shield, and EQ:Vision will be published here as those products launch in Q3-Q4 2026.
+                </p>
+            </div>
+        </section>
+
+        <!-- Manufacturing Transparency -->
+        <section style="margin: 4rem 0;">
+            <h2>Manufacturing Standards</h2>
+            <div class="story-container" style="max-width: 900px;">
+                <h3 style="margin-bottom: 1rem;">Where Your Supplements Are Made</h3>
+                <p>
+                    All BalanceEQ products are manufactured in FDA-registered, cGMP-certified facilities in the United States. We partner only with manufacturers who share our commitment to quality and transparency.
+                </p>
+                
+                <div style="margin: 2rem 0; padding: 1.5rem; background: rgba(15, 23, 42, 0.5); border-radius: 1rem;">
+                    <h4 style="margin-bottom: 1rem; color: #8b5cf6;">Our Manufacturing Requirements:</h4>
+                    <ul style="color: #cbd5e1; padding-left: 1.5rem; line-height: 1.8;">
+                        <li>FDA-registered facility with current cGMP certification</li>
+                        <li>Complete batch documentation and traceability</li>
+                        <li>Third-party testing for every production run</li>
+                        <li>Climate-controlled storage and handling</li>
+                        <li>Regular facility audits and inspections</li>
+                        <li>Validated cleaning procedures between batches</li>
+                    </ul>
+                </div>
+                
+                <p style="color: #94a3b8; font-size: 0.875rem; margin-top: 1.5rem;">
+                    <strong>Supplier Transparency:</strong> All raw material suppliers provide Certificates of Analysis and undergo our qualification process. Specific manufacturer names and locations will be published with our first production batch in Q1 2026.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- INGREDIENTS PAGE (redirects to transparency) -->
     <div id="ingredients" class="page">
+        <div class="hero">
+            <h1>Ingredient Information</h1>
+            <p class="subtitle">View our complete ingredient database and testing results on our Transparency page</p>
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <button class="subscribe-btn" style="max-width: 300px; margin: 0 auto;" onclick="showPage('transparency')">
+                Go to Transparency Page
+            </button>
+        </div>
+    </div>
         <div class="hero">
             <h1>Our Ingredients</h1>
             <p class="subtitle">Every ingredient is chosen for efficacy and dosed according to clinical research</p>
@@ -964,7 +1252,7 @@
     <!-- INGREDIENT DETAIL PAGE -->
     <div id="ingredientDetail" class="page">
         <div class="ingredient-detail">
-            <a class="back-button" onclick="showPage('products')">← Back to Products</a>
+            <a class="back-button" onclick="showPage('transparency')">← Back to Transparency</a>
             
             <div class="ingredient-header">
                 <h1 id="ingredientName">Ingredient Name</h1>
@@ -1014,7 +1302,7 @@
                 <ul>
                     <li><a onclick="showPage('products')">BalanceEQ Line</a></li>
                     <li><a onclick="scrollToBundles()">Bundles & Packs</a></li>
-                    <li><a onclick="showPage('ingredients')">Ingredients</a></li>
+                    <li><a onclick="showPage('transparency')">Transparency</a></li>
                 </ul>
             </div>
             
