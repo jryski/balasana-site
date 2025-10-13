@@ -6,6 +6,14 @@
     <title>Balasana - Balance From the Inside Out</title>
     <meta name="description" content="Science-backed nootropic supplements, performance nutrition, and curated wellness from Balasana. BalanceEQ product line launching 2026.">
     
+    <!-- 
+    LOGO SETUP INSTRUCTIONS:
+    1. Save your Balasana script logo (the elegant flowing B with cream color) as 'balasana-logo.png'
+    2. Place it in the same folder as this HTML file
+    3. The logo should be transparent PNG with the cream/beige signature and wordmark
+    4. Recommended: Export at 2x resolution (160px height) for retina displays
+    -->
+    
     <style>
         * {
             margin: 0;
@@ -42,13 +50,22 @@
         }
         
         .logo {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+        
+        .logo-text {
             font-size: 1.5rem;
             font-weight: bold;
-            background: linear-gradient(135deg, #8b5cf6, #ec4899);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            cursor: pointer;
+            color: #e2e8f0;
+            letter-spacing: 0.05em;
         }
         
         .nav-links {
@@ -511,7 +528,10 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo" onclick="showPage('home')">BALASANA</div>
+            <div class="logo" onclick="showPage('home')">
+                <!-- Replace 'balasana-logo.png' with your actual logo filename -->
+                <img src="balasana-logo.png" alt="Balasana" class="logo-img">
+            </div>
             <ul class="nav-links">
                 <li><a onclick="showPage('home')">Home</a></li>
                 <li><a onclick="showPage('products')">Products</a></li>
