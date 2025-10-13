@@ -6,12 +6,11 @@
     <title>Balasana - Balance From the Inside Out</title>
     <meta name="description" content="Science-backed nootropic supplements, performance nutrition, and curated wellness from Balasana. BalanceEQ product line launching 2026.">
     
+    <!-- Logo Setup Instructions -->
     <!-- 
-    LOGO SETUP INSTRUCTIONS:
-    1. Save your Balasana script logo (the elegant flowing B with cream color) as 'balasana-logo.png'
-    2. Place it in the same folder as this HTML file
-    3. The logo should be transparent PNG with the cream/beige signature and wordmark
-    4. Recommended: Export at 2x resolution (160px height) for retina displays
+    1. Save your Balasana logo as 'balasana-logo.png' (cream/teal version)
+    2. Place in same folder as this HTML file
+    3. Recommended: 150-200px height, transparent PNG
     -->
     
     <style>
@@ -22,9 +21,9 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(to bottom, #0f172a, #1e1b4b);
-            color: #e2e8f0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #FDFBF7;
+            color: #2C3E50;
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -34,11 +33,11 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(15, 23, 42, 0.95);
+            background: rgba(253, 251, 247, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 1.25rem 2rem;
-            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+            border-bottom: 1px solid rgba(44, 62, 80, 0.08);
         }
         
         .nav-container {
@@ -59,7 +58,6 @@
         .logo-img {
             height: 50px;
             width: auto;
-            filter: brightness(1.1);
         }
         
         @media (min-width: 768px) {
@@ -68,28 +66,29 @@
             }
         }
         
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #e2e8f0;
-            letter-spacing: 0.05em;
-        }
-        
         .nav-links {
-            display: flex;
-            gap: 2rem;
+            display: none;
+            gap: 2.5rem;
             list-style: none;
         }
         
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+        
         .nav-links a {
-            color: #cbd5e1;
+            color: #5A6C7D;
             text-decoration: none;
             transition: color 0.3s;
             cursor: pointer;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
         }
         
         .nav-links a:hover {
-            color: #8b5cf6;
+            color: #2A9D8F;
         }
         
         /* Page sections */
@@ -113,30 +112,71 @@
         
         h1 {
             font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: bold;
+            font-weight: 600;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #ffffff, #8b5cf6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #1A2332;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
         }
         
         .subtitle {
-            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-            color: #94a3b8;
+            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+            color: #5A6C7D;
             margin-bottom: 2rem;
+            font-weight: 400;
         }
         
         h2 {
             font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: bold;
-            margin-bottom: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
             text-align: center;
+            color: #1A2332;
+            letter-spacing: -0.01em;
         }
         
         h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
+            color: #1A2332;
+            font-weight: 600;
+        }
+        
+        /* Buttons */
+        .btn-primary {
+            background: #2A9D8F;
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 0.02em;
+        }
+        
+        .btn-primary:hover {
+            background: #238276;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(42, 157, 143, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #2A9D8F;
+            padding: 1rem 2.5rem;
+            border: 2px solid #2A9D8F;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-secondary:hover {
+            background: #2A9D8F;
+            color: white;
         }
         
         /* Product Grid */
@@ -146,18 +186,20 @@
         
         .phase-header {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
         
         .phase-badge {
             display: inline-block;
-            background: linear-gradient(135deg, #8b5cf6, #ec4899);
-            color: white;
+            background: #E8F5F3;
+            color: #2A9D8F;
             padding: 0.5rem 1.5rem;
-            border-radius: 2rem;
-            font-size: 0.875rem;
+            border-radius: 24px;
+            font-size: 0.85rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
         
         .product-grid {
@@ -168,37 +210,25 @@
         }
         
         .product-card {
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(51, 65, 85, 0.3));
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            border-radius: 1.5rem;
-            padding: 2rem;
+            background: white;
+            border: 1px solid #E8EDF2;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
-            cursor: pointer;
         }
         
         .product-card:hover {
             transform: translateY(-5px);
-            border-color: rgba(139, 92, 246, 0.6);
-            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
-        }
-        
-        .product-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #8b5cf6, #ec4899);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            border-color: #2A9D8F;
         }
         
         .product-icon {
             width: 64px;
             height: 64px;
-            margin: 0 auto 1rem;
+            margin: 0 auto 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -208,32 +238,38 @@
         .product-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
+            text-align: center;
         }
         
         .product-card p {
-            color: #94a3b8;
+            color: #5A6C7D;
             margin-bottom: 1rem;
             font-size: 0.95rem;
+            line-height: 1.7;
         }
         
         .product-launch {
             font-size: 0.875rem;
-            color: #8b5cf6;
+            color: #2A9D8F;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
         }
         
         .product-ingredients {
-            background: rgba(15, 23, 42, 0.5);
-            padding: 0.75rem;
-            border-radius: 0.5rem;
-            margin-bottom: 1rem;
+            background: #F8FAFB;
+            padding: 1rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
         }
         
         .product-ingredients h4 {
-            font-size: 0.875rem;
-            color: #cbd5e1;
-            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            color: #5A6C7D;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
         }
         
         .ingredient-tags {
@@ -244,44 +280,44 @@
         
         .ingredient-tag {
             font-size: 0.75rem;
-            background: rgba(139, 92, 246, 0.2);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            color: #a78bfa;
-            padding: 0.25rem 0.75rem;
-            border-radius: 1rem;
+            background: white;
+            border: 1px solid #E8EDF2;
+            color: #2A9D8F;
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
             cursor: pointer;
             transition: all 0.2s;
+            font-weight: 500;
         }
         
         .ingredient-tag:hover {
-            background: rgba(139, 92, 246, 0.4);
-            border-color: rgba(139, 92, 246, 0.6);
+            background: #E8F5F3;
+            border-color: #2A9D8F;
         }
         
         .subscribe-btn {
             width: 100%;
             padding: 1rem;
-            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            background: #2A9D8F;
             color: white;
             border: none;
-            border-radius: 0.5rem;
+            border-radius: 8px;
             font-size: 1rem;
-            font-weight: 600;
+            font-weight: 500;
             cursor: pointer;
             transition: all 0.3s;
         }
         
         .subscribe-btn:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.5);
+            background: #238276;
+            transform: translateY(-2px);
         }
         
         /* Story Section */
         .story-container {
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(51, 65, 85, 0.3));
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            border-radius: 2rem;
+            background: white;
+            border: 1px solid #E8EDF2;
+            border-radius: 16px;
             padding: 3rem;
             margin: 2rem auto;
             max-width: 900px;
@@ -289,19 +325,19 @@
         
         .story-container p {
             font-size: 1.125rem;
-            color: #cbd5e1;
+            color: #2C3E50;
             margin-bottom: 1.5rem;
             line-height: 1.8;
         }
         
         .story-highlight {
-            border-top: 2px solid rgba(139, 92, 246, 0.3);
+            border-top: 2px solid #E8F5F3;
             padding-top: 2rem;
             margin-top: 2rem;
         }
         
         .story-highlight .label {
-            color: #8b5cf6;
+            color: #2A9D8F;
             font-weight: 600;
             font-size: 1.125rem;
             margin-bottom: 0.5rem;
@@ -309,8 +345,110 @@
         
         .story-highlight .mission {
             font-size: 1.5rem;
+            font-weight: 600;
+            color: #1A2332;
+        }
+        
+        /* Mind Body Spirit Cards */
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .pillar-card {
+            background: white;
+            border: 1px solid #E8EDF2;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        }
+        
+        .pillar-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .pillar-card h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .pillar-subtitle {
+            font-size: 0.9rem;
+            color: #2A9D8F;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+        
+        .pillar-description {
+            color: #5A6C7D;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .pillar-features {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .pillar-feature {
+            font-size: 0.85rem;
+            color: #2C3E50;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .pillar-feature::before {
+            content: "✓";
+            color: #2A9D8F;
             font-weight: bold;
-            color: #ffffff;
+        }
+        
+        /* Quality Badges */
+        .quality-badges {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: white;
+            border: 1px solid #E8EDF2;
+            border-radius: 16px;
+        }
+        
+        .badge {
+            text-align: center;
+        }
+        
+        .badge-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            border: 2px solid #E8EDF2;
+            border-radius: 50%;
+        }
+        
+        .badge-label {
+            font-size: 0.8rem;
+            color: #2C3E50;
+            font-weight: 500;
+            line-height: 1.3;
         }
         
         /* Ingredient Detail Page */
@@ -323,74 +461,76 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            color: #8b5cf6;
+            color: #2A9D8F;
             text-decoration: none;
             margin-bottom: 2rem;
             cursor: pointer;
             transition: all 0.2s;
+            font-weight: 500;
         }
         
         .back-button:hover {
-            color: #a78bfa;
-            transform: translateX(-5px);
+            gap: 0.25rem;
         }
         
         .ingredient-header {
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(51, 65, 85, 0.3));
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            border-radius: 1.5rem;
-            padding: 2rem;
+            background: white;
+            border: 1px solid #E8EDF2;
+            border-radius: 16px;
+            padding: 2.5rem;
             margin-bottom: 2rem;
         }
         
         .ingredient-meta {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
         
         .meta-item {
-            background: rgba(15, 23, 42, 0.5);
-            padding: 1rem;
-            border-radius: 0.5rem;
+            background: #F8FAFB;
+            padding: 1.25rem;
+            border-radius: 12px;
         }
         
         .meta-label {
-            font-size: 0.875rem;
-            color: #94a3b8;
-            margin-bottom: 0.25rem;
+            font-size: 0.8rem;
+            color: #5A6C7D;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
         }
         
         .meta-value {
             font-size: 1.125rem;
-            color: #e2e8f0;
+            color: #1A2332;
             font-weight: 600;
         }
         
         .studies-section {
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(51, 65, 85, 0.3));
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            border-radius: 1.5rem;
-            padding: 2rem;
+            background: white;
+            border: 1px solid #E8EDF2;
+            border-radius: 16px;
+            padding: 2.5rem;
             margin-bottom: 2rem;
         }
         
         .study-link {
             display: block;
-            color: #8b5cf6;
+            color: #2A9D8F;
             text-decoration: none;
-            padding: 0.75rem 1rem;
-            background: rgba(139, 92, 246, 0.1);
-            border-radius: 0.5rem;
-            margin-bottom: 0.5rem;
+            padding: 1rem;
+            background: #F8FAFB;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
             transition: all 0.2s;
+            font-size: 0.9rem;
         }
         
         .study-link:hover {
-            background: rgba(139, 92, 246, 0.2);
+            background: #E8F5F3;
             transform: translateX(5px);
         }
         
@@ -402,7 +542,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(26, 35, 50, 0.7);
             z-index: 2000;
             align-items: center;
             justify-content: center;
@@ -413,10 +553,9 @@
         }
         
         .modal-content {
-            background: linear-gradient(135deg, #1e293b, #334155);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            border-radius: 1.5rem;
-            padding: 2rem;
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
             max-width: 500px;
             width: 90%;
             position: relative;
@@ -424,18 +563,29 @@
         
         .modal-close {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
+            top: 1.5rem;
+            right: 1.5rem;
             background: none;
             border: none;
-            color: #94a3b8;
+            color: #5A6C7D;
             font-size: 1.5rem;
             cursor: pointer;
             transition: color 0.3s;
         }
         
         .modal-close:hover {
-            color: white;
+            color: #2C3E50;
+        }
+        
+        .modal h3 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .modal p {
+            color: #5A6C7D;
+            margin-bottom: 2rem;
+            text-align: center;
         }
         
         .modal form {
@@ -446,21 +596,27 @@
         
         .modal input {
             padding: 1rem;
-            border-radius: 0.5rem;
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            background: rgba(15, 23, 42, 0.8);
-            color: white;
+            border-radius: 8px;
+            border: 1px solid #E8EDF2;
+            background: #F8FAFB;
+            color: #2C3E50;
             font-size: 1rem;
         }
         
         .modal input::placeholder {
-            color: #64748b;
+            color: #A8B5C3;
+        }
+        
+        .modal input:focus {
+            outline: none;
+            border-color: #2A9D8F;
+            background: white;
         }
         
         /* Footer */
         footer {
-            background: rgba(15, 23, 42, 0.8);
-            border-top: 1px solid rgba(139, 92, 246, 0.2);
+            background: white;
+            border-top: 1px solid #E8EDF2;
             padding: 3rem 2rem;
             margin-top: 4rem;
         }
@@ -475,7 +631,9 @@
         
         .footer-section h4 {
             margin-bottom: 1rem;
-            font-size: 1.125rem;
+            font-size: 1rem;
+            color: #1A2332;
+            font-weight: 600;
         }
         
         .footer-section ul {
@@ -487,19 +645,19 @@
         }
         
         .footer-section a {
-            color: #94a3b8;
+            color: #5A6C7D;
             text-decoration: none;
-            font-size: 0.875rem;
+            font-size: 0.9rem;
             transition: color 0.3s;
             cursor: pointer;
         }
         
         .footer-section a:hover {
-            color: #8b5cf6;
+            color: #2A9D8F;
         }
         
         .footer-bottom {
-            border-top: 1px solid rgba(51, 65, 85, 0.5);
+            border-top: 1px solid #E8EDF2;
             margin-top: 2rem;
             padding-top: 2rem;
             display: flex;
@@ -510,16 +668,17 @@
         }
         
         .footer-bottom p {
-            color: #64748b;
+            color: #5A6C7D;
             font-size: 0.875rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
             .product-grid {
                 grid-template-columns: 1fr;
             }
@@ -527,6 +686,10 @@
             .footer-bottom {
                 flex-direction: column;
                 text-align: center;
+            }
+            
+            .story-container {
+                padding: 2rem;
             }
         }
     </style>
@@ -536,9 +699,8 @@
     <nav>
         <div class="nav-container">
             <div class="logo" onclick="showPage('home')">
-                <!-- Logo will appear here once you add balasana-logo.png to the folder -->
                 <img src="balasana-logo.png" alt="Balasana" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <span class="logo-text" style="display: none;">BALASANA</span>
+                <span style="display: none; font-size: 1.5rem; font-weight: 600; color: #1A2332;">BALASANA</span>
             </div>
             <ul class="nav-links">
                 <li><a onclick="showPage('home')">Home</a></li>
@@ -555,55 +717,108 @@
         <div class="hero">
             <h1>Balance From the Inside Out</h1>
             <p class="subtitle">Science-backed supplements and nutrition for peak performance and true equilibrium</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                <button class="btn-primary" onclick="showPage('products')">Explore Products</button>
+                <button class="btn-secondary" onclick="showPage('story')">Our Story</button>
+            </div>
         </div>
 
-        <div style="text-align: center; margin-bottom: 4rem;">
-            <button class="subscribe-btn" style="max-width: 400px; margin: 0 auto;" onclick="showPage('products')">
-                Explore Product Line
-            </button>
-        </div>
-
-        <h2>The BalanceEQ System</h2>
-        <p style="text-align: center; color: #94a3b8; max-width: 800px; margin: 0 auto 3rem;">
-            A comprehensive approach to cognitive wellness, performance, and recovery. Each formula is built on clinical research, transparent dosing, and premium ingredients.
+        <!-- Mind Body Spirit -->
+        <h2 style="margin-bottom: 0.5rem;">Mind. Body. Spirit.</h2>
+        <p style="text-align: center; color: #5A6C7D; max-width: 700px; margin: 0 auto 3rem;">
+            True wellness is the harmony of all three. Our formulas work with your body's natural rhythms.
         </p>
+        
+        <div class="pillar-grid">
+            <div class="pillar-card">
+                <div class="pillar-icon">🧠</div>
+                <h3>Mind</h3>
+                <p class="pillar-subtitle">Cognitive Excellence</p>
+                <p class="pillar-description">Circadian-optimized nootropics engineered for peak mental performance</p>
+                <div class="pillar-features">
+                    <div class="pillar-feature">Focus & Clarity</div>
+                    <div class="pillar-feature">Memory Enhancement</div>
+                    <div class="pillar-feature">Stress Resilience</div>
+                </div>
+            </div>
+            
+            <div class="pillar-card">
+                <div class="pillar-icon">❤️</div>
+                <h3>Body</h3>
+                <p class="pillar-subtitle">Physical Vitality</p>
+                <p class="pillar-description">Science-backed adaptogens supporting your body's natural rhythms</p>
+                <div class="pillar-features">
+                    <div class="pillar-feature">Energy Balance</div>
+                    <div class="pillar-feature">Immune Support</div>
+                    <div class="pillar-feature">Recovery</div>
+                </div>
+            </div>
+            
+            <div class="pillar-card">
+                <div class="pillar-icon">✨</div>
+                <h3>Spirit</h3>
+                <p class="pillar-subtitle">Inner Balance</p>
+                <p class="pillar-description">Holistic wellness through the mind-body connection</p>
+                <div class="pillar-features">
+                    <div class="pillar-feature">Mood Balance</div>
+                    <div class="pillar-feature">Sleep Quality</div>
+                    <div class="pillar-feature">Well-being</div>
+                </div>
+            </div>
+        </div>
 
-        <div class="product-grid">
+        <!-- Quality Badges -->
+        <div class="quality-badges">
+            <div class="badge">
+                <div class="badge-icon">🌱</div>
+                <div class="badge-label">Vegan Options</div>
+            </div>
+            <div class="badge">
+                <div class="badge-icon">🧪</div>
+                <div class="badge-label">Third-Party Tested</div>
+            </div>
+            <div class="badge">
+                <div class="badge-icon">🚫</div>
+                <div class="badge-label">No Binders</div>
+            </div>
+            <div class="badge">
+                <div class="badge-icon">✓</div>
+                <div class="badge-label">cGMP Certified</div>
+            </div>
+            <div class="badge">
+                <div class="badge-icon">🔬</div>
+                <div class="badge-label">Clinical Doses</div>
+            </div>
+            <div class="badge">
+                <div class="badge-icon">📋</div>
+                <div class="badge-label">Full Transparency</div>
+            </div>
+        </div>
+
+        <!-- Featured Products Preview -->
+        <h2 style="margin-top: 4rem;">The BalanceEQ System</h2>
+        <p style="text-align: center; color: #5A6C7D; max-width: 800px; margin: 0 auto 3rem;">
+            Complete 24-hour cognitive support. Morning performance meets evening recovery.
+        </p>
+        
+        <div class="product-grid" style="max-width: 900px; margin: 0 auto;">
             <div class="product-card" onclick="showPage('products')">
                 <div class="product-icon">☀️</div>
                 <h3>EQ:Focus</h3>
-                <p>Circadian-optimized morning nootropic for peak mental clarity and focus. Launching Q1 2026.</p>
+                <p>Circadian-optimized morning nootropic for peak mental clarity and focus</p>
+                <p class="product-launch">Launching Q1 2026</p>
             </div>
             
             <div class="product-card" onclick="showPage('products')">
                 <div class="product-icon">🌙</div>
                 <h3>EQ:Restore</h3>
-                <p>Evening recovery formula for stress resilience and restorative sleep. Launching Q1 2026.</p>
-            </div>
-            
-            <div class="product-card" onclick="showPage('products')">
-                <div class="product-icon">⚡</div>
-                <h3>EQ:Drive</h3>
-                <p>Clean, sustained energy for demanding days. Coming Q3 2026.</p>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin: 4rem auto; max-width: 800px;">
-            <div style="background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(139, 92, 246, 0.1)); border: 2px solid rgba(236, 72, 153, 0.3); border-radius: 1.5rem; padding: 2rem;">
-                <h3 style="margin-bottom: 1rem;">💑 Introducing the Partner Pack</h3>
-                <p style="color: #cbd5e1; margin-bottom: 1.5rem;">
-                    Tackle life's challenges with your P.I.C. Complete 30-day supply of Focus & Restore for two people. Save 15% and build healthy routines together.
-                </p>
-                <button class="subscribe-btn" style="max-width: 300px; margin: 0 auto;" onclick="scrollToBundles()">
-                    Explore Bundles
-                </button>
+                <p>Evening recovery formula for stress resilience and restorative sleep</p>
+                <p class="product-launch">Launching Q1 2026</p>
             </div>
         </div>
 
         <div style="text-align: center; margin-top: 3rem;">
-            <button class="subscribe-btn" style="max-width: 300px; margin: 0 auto;" onclick="showPage('products')">
-                View Complete Line
-            </button>
+            <button class="btn-primary" onclick="showPage('products')">View Complete Line</button>
         </div>
     </div>
 
@@ -617,9 +832,9 @@
         <!-- Phase 1 Products -->
         <div class="product-section">
             <div class="phase-header">
-                <span class="phase-badge">LAUNCHING Q1 2026</span>
+                <span class="phase-badge">Launching Q1 2026</span>
                 <h2>Phase 1: Core System</h2>
-                <p style="color: #94a3b8; max-width: 800px; margin: 0 auto;">
+                <p style="color: #5A6C7D; max-width: 800px; margin: 0 auto;">
                     The foundation of the BalanceEQ system. Circadian-optimized nootropics for 24-hour cognitive support.
                 </p>
             </div>
@@ -632,7 +847,7 @@
                     <p>Sharpen attention without stimulants. Built for deep work, fast context-switching, and calm execution.</p>
                     
                     <div class="product-ingredients">
-                        <h4>Key Ingredients:</h4>
+                        <h4>Key Ingredients</h4>
                         <div class="ingredient-tags">
                             <span class="ingredient-tag" onclick="showIngredient('Citicoline')">Citicoline 250mg</span>
                             <span class="ingredient-tag" onclick="showIngredient('Lion\'s Mane')">Lion's Mane 500mg</span>
@@ -643,7 +858,7 @@
                         </div>
                     </div>
                     
-                    <ul style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem; padding-left: 1.5rem;">
+                    <ul style="color: #5A6C7D; font-size: 0.875rem; margin-bottom: 1.5rem; padding-left: 1.5rem; line-height: 1.8;">
                         <li>Supports working memory and task focus</li>
                         <li>Promotes calm under pressure</li>
                         <li>Supports cellular energy metabolism</li>
@@ -660,7 +875,7 @@
                     <p>Downshift stress and wake clearer. Sleep support that also helps next-day recall.</p>
                     
                     <div class="product-ingredients">
-                        <h4>Key Ingredients:</h4>
+                        <h4>Key Ingredients</h4>
                         <div class="ingredient-tags">
                             <span class="ingredient-tag" onclick="showIngredient('Magnesium L-Threonate')">Mag L-Threonate 1000mg</span>
                             <span class="ingredient-tag" onclick="showIngredient('Ashwagandha')">Ashwagandha 300mg</span>
@@ -672,7 +887,7 @@
                         </div>
                     </div>
                     
-                    <ul style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem; padding-left: 1.5rem;">
+                    <ul style="color: #5A6C7D; font-size: 0.875rem; margin-bottom: 1.5rem; padding-left: 1.5rem; line-height: 1.8;">
                         <li>Supports relaxation and sleep quality</li>
                         <li>Helps maintain healthy stress response</li>
                         <li>Supports memory consolidation overnight</li>
@@ -687,117 +902,43 @@
         <!-- Phase 2 Products -->
         <div class="product-section">
             <div class="phase-header">
-                <span class="phase-badge">COMING Q3-Q4 2026</span>
+                <span class="phase-badge">Coming Q3-Q4 2026</span>
                 <h2>Phase 2: Complete Wellness</h2>
-                <p style="color: #94a3b8; max-width: 800px; margin: 0 auto;">
+                <p style="color: #5A6C7D; max-width: 800px; margin: 0 auto;">
                     Expanding the ecosystem with targeted support for energy, recovery, vision, and foundational health.
                 </p>
             </div>
             
             <div class="product-grid">
-                <!-- EQ:Drive -->
+                <!-- Additional products with similar structure -->
                 <div class="product-card">
                     <div class="product-icon">⚡</div>
                     <h3>EQ:Drive</h3>
                     <p>Turn on clean, sustained drive for heavy lift days—no jitters.</p>
-                    
-                    <div class="product-ingredients">
-                        <h4>Key Ingredients:</h4>
-                        <div class="ingredient-tags">
-                            <span class="ingredient-tag" onclick="showIngredient('Uridine')">Uridine 150mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('ALCAR')">ALCAR 500mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('Pine Bark')">Pine Bark 100mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('CoQ10')">CoQ10 100mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('PQQ')">PQQ 10mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('NAC')">NAC 600mg</span>
-                        </div>
-                    </div>
-                    
-                    <ul style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem; padding-left: 1.5rem;">
-                        <li>Supports mitochondrial energy production</li>
-                        <li>Helps reduce feelings of mental fatigue</li>
-                        <li>Complements Focus for long cognitive blocks</li>
-                    </ul>
-                    
                     <p class="product-launch">Launch: Q3 2026</p>
                     <button class="subscribe-btn" onclick="openModal('EQ:Drive')">Get Notified</button>
                 </div>
                 
-                <!-- EQ:Foundations -->
                 <div class="product-card">
                     <div class="product-icon">🛡️</div>
                     <h3>EQ:Foundations</h3>
                     <p>Cover the gaps so your brain runs clean. Core omega-3s with D3/K2 for daily resilience.</p>
-                    
-                    <div class="product-ingredients">
-                        <h4>Key Ingredients:</h4>
-                        <div class="ingredient-tags">
-                            <span class="ingredient-tag" onclick="showIngredient('Vitamin D3')">D3 2000 IU</span>
-                            <span class="ingredient-tag" onclick="showIngredient('Vitamin K2')">K2 (MK-7) 100µg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('Omega-3')">Omega-3 (EPA 900mg/DHA 600mg)</span>
-                        </div>
-                    </div>
-                    
-                    <ul style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem; padding-left: 1.5rem;">
-                        <li>Supports brain, eye, and heart health</li>
-                        <li>Helps maintain healthy vitamin D status</li>
-                        <li>Antioxidant support with mixed tocopherols</li>
-                    </ul>
-                    
                     <p class="product-launch">Launch: Q3 2026</p>
                     <button class="subscribe-btn" onclick="openModal('EQ:Foundations')">Get Notified</button>
                 </div>
                 
-                <!-- EQ:Shield -->
                 <div class="product-card">
                     <div class="product-icon">🛡️</div>
                     <h3>EQ:Shield</h3>
                     <p>Daily defense for recovery and joint comfort—inside-out resilience.</p>
-                    
-                    <div class="product-ingredients">
-                        <h4>Key Ingredients:</h4>
-                        <div class="ingredient-tags">
-                            <span class="ingredient-tag" onclick="showIngredient('Curcumin')">Curcumin 150mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('Quercetin')">Quercetin 120mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('Resveratrol')">Resveratrol 60mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('Ginger')">Ginger 60mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('Boswellia')">Boswellia 60mg</span>
-                        </div>
-                    </div>
-                    
-                    <ul style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem; padding-left: 1.5rem;">
-                        <li>Supports healthy inflammatory response</li>
-                        <li>Antioxidant support against oxidative stress</li>
-                        <li>Complements training and recovery</li>
-                    </ul>
-                    
                     <p class="product-launch">Launch: Q4 2026</p>
                     <button class="subscribe-btn" onclick="openModal('EQ:Shield')">Get Notified</button>
                 </div>
                 
-                <!-- EQ:Vision -->
                 <div class="product-card">
                     <div class="product-icon">👁️</div>
                     <h3>EQ:Vision</h3>
                     <p>Relieve and protect overworked eyes from screens and glare.</p>
-                    
-                    <div class="product-ingredients">
-                        <h4>Key Ingredients:</h4>
-                        <div class="ingredient-tags">
-                            <span class="ingredient-tag" onclick="showIngredient('Lutein')">Lutein 10mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('Zeaxanthin')">Zeaxanthin 2mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('Astaxanthin')">Astaxanthin 4mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('Bilberry')">Bilberry 80mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('Blackcurrant')">Blackcurrant 80mg</span>
-                        </div>
-                    </div>
-                    
-                    <ul style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem; padding-left: 1.5rem;">
-                        <li>Supports macular pigment and visual performance</li>
-                        <li>Helps ease eye strain from screen time</li>
-                        <li>Antioxidant support for retinal cells</li>
-                    </ul>
-                    
                     <p class="product-launch">Launch: Q4 2026</p>
                     <button class="subscribe-btn" onclick="openModal('EQ:Vision')">Get Notified</button>
                 </div>
@@ -807,33 +948,33 @@
         <!-- Bundles Section -->
         <div class="product-section">
             <div class="phase-header">
-                <span class="phase-badge">SMART STACKS</span>
+                <span class="phase-badge">Smart Stacks</span>
                 <h2>Bundles & Packs</h2>
-                <p style="color: #94a3b8; max-width: 800px; margin: 0 auto;">
+                <p style="color: #5A6C7D; max-width: 800px; margin: 0 auto;">
                     Thoughtfully curated combinations for maximum synergy and better value.
                 </p>
             </div>
             
             <div class="product-grid">
                 <!-- Partner Pack -->
-                <div class="product-card" style="border: 2px solid rgba(236, 72, 153, 0.5);">
+                <div class="product-card" style="border: 2px solid #2A9D8F;">
                     <div class="product-icon">💑</div>
                     <h3>Partner Pack</h3>
-                    <span class="phase-badge" style="font-size: 0.75rem; padding: 0.25rem 0.75rem;">MOST POPULAR</span>
-                    <p style="margin-top: 1rem;">Tackle life's challenges with your P.I.C. (Partner in Crime). Complete 30-day supply for two.</p>
+                    <span class="phase-badge" style="font-size: 0.7rem; padding: 0.25rem 0.75rem;">Most Popular</span>
+                    <p style="margin-top: 1rem;">Tackle life's challenges with your P.I.C. Complete 30-day supply for two.</p>
                     
                     <div class="product-ingredients">
-                        <h4>What's Included:</h4>
-                        <div style="color: #cbd5e1; font-size: 0.95rem; margin-top: 0.5rem;">
+                        <h4>What's Included</h4>
+                        <div style="color: #2C3E50; font-size: 0.9rem; margin-top: 0.5rem;">
                             <p>• 2x EQ:Focus (60 servings)</p>
                             <p>• 2x EQ:Restore (60 servings)</p>
                         </div>
                     </div>
                     
-                    <ul style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem; padding-left: 1.5rem;">
+                    <ul style="color: #5A6C7D; font-size: 0.875rem; margin-bottom: 1.5rem; padding-left: 1.5rem; line-height: 1.8;">
                         <li>Support each other's wellness journey</li>
                         <li>Shared routine builds accountability</li>
-                        <li>Perfect for couples, roommates, workout partners</li>
+                        <li>Perfect for couples, roommates, partners</li>
                         <li>Save 15% vs buying individually</li>
                     </ul>
                     
@@ -841,79 +982,21 @@
                     <button class="subscribe-btn" onclick="openModal('Partner Pack')">Get Notified</button>
                 </div>
                 
-                <!-- 24/7 Stack -->
+                <!-- Additional bundles -->
                 <div class="product-card">
                     <div class="product-icon">🔄</div>
                     <h3>24/7 Stack</h3>
                     <p>Complete circadian support. Morning focus meets evening recovery.</p>
-                    
-                    <div class="product-ingredients">
-                        <h4>What's Included:</h4>
-                        <div style="color: #cbd5e1; font-size: 0.95rem; margin-top: 0.5rem;">
-                            <p>• 1x EQ:Focus (30 servings)</p>
-                            <p>• 1x EQ:Restore (30 servings)</p>
-                        </div>
-                    </div>
-                    
-                    <ul style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem; padding-left: 1.5rem;">
-                        <li>Optimized for your body's natural rhythm</li>
-                        <li>Synergistic day-night protocol</li>
-                        <li>Save 10% vs buying separately</li>
-                    </ul>
-                    
                     <p class="product-launch">Launch: April 6, 2026</p>
                     <button class="subscribe-btn" onclick="openModal('24/7 Stack')">Get Notified</button>
                 </div>
                 
-                <!-- Performance Bundle -->
                 <div class="product-card">
                     <div class="product-icon">🚀</div>
                     <h3>Performance Bundle</h3>
                     <p>Everything you need for peak mental and physical output.</p>
-                    
-                    <div class="product-ingredients">
-                        <h4>What's Included:</h4>
-                        <div style="color: #cbd5e1; font-size: 0.95rem; margin-top: 0.5rem;">
-                            <p>• 1x EQ:Focus (30 servings)</p>
-                            <p>• 1x EQ:Drive (30 servings)</p>
-                            <p>• 1x EQ:Shield (30 servings)</p>
-                        </div>
-                    </div>
-                    
-                    <ul style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem; padding-left: 1.5rem;">
-                        <li>Mental clarity + sustained energy</li>
-                        <li>Recovery and inflammation support</li>
-                        <li>Ideal for athletes and high performers</li>
-                        <li>Save 12% vs buying individually</li>
-                    </ul>
-                    
                     <p class="product-launch">Launch: Q3 2026</p>
                     <button class="subscribe-btn" onclick="openModal('Performance Bundle')">Get Notified</button>
-                </div>
-                
-                <!-- Complete System -->
-                <div class="product-card">
-                    <div class="product-icon">⭐</div>
-                    <h3>Complete System</h3>
-                    <p>The full BalanceEQ ecosystem. Leave nothing to chance.</p>
-                    
-                    <div class="product-ingredients">
-                        <h4>What's Included:</h4>
-                        <div style="color: #cbd5e1; font-size: 0.95rem; margin-top: 0.5rem;">
-                            <p>• All 6 EQ Products (30-day supply each)</p>
-                            <p>• Custom supplement schedule guide</p>
-                            <p>• Priority customer support</p>
-                        </div>
-                    </div>
-                    
-                    <ul style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem; padding-left: 1.5rem;">
-                        <li>Complete cognitive & physical wellness</li>
-                        <li>Comprehensive, synergistic protocol</li>
-                        <li>Maximum value - Save 20%</li>
-                    </ul>
-                    
-                    <p class="product-launch">Launch: Q4 2026</p>
-                    <button class="subscribe-btn" onclick="openModal('Complete System')">Get Notified</button>
                 </div>
             </div>
         </div>
@@ -950,7 +1033,7 @@
             <div class="story-highlight">
                 <p class="label">The mission remains the same:</p>
                 <p class="mission">Help you find your balance, from the inside out.</p>
-                <p style="margin-top: 1.5rem; color: #94a3b8;">— Jesse, Founder</p>
+                <p style="margin-top: 1.5rem; color: #5A6C7D;">— Jesse, Founder</p>
             </div>
         </div>
     </div>
@@ -968,7 +1051,7 @@
             <p>
                 We believe you deserve to know exactly what you're putting in your body. That's why we publish complete transparency reports including:
             </p>
-            <ul style="color: #cbd5e1; margin: 1rem 0 1rem 2rem; line-height: 1.8;">
+            <ul style="color: #2C3E50; margin: 1rem 0 1rem 2rem; line-height: 1.8;">
                 <li><strong>Full ingredient disclosure</strong> - Every ingredient, every dose, no proprietary blends</li>
                 <li><strong>Clinical research</strong> - Direct links to peer-reviewed studies</li>
                 <li><strong>Third-party testing</strong> - Independent verification of purity and potency</li>
@@ -977,275 +1060,88 @@
         </div>
 
         <!-- Testing & Quality Section -->
-        <section style="margin: 4rem 0;">
-            <h2>Testing & Quality Assurance</h2>
-            <p style="text-align: center; color: #94a3b8; max-width: 800px; margin: 0 auto 3rem;">
-                Every batch undergoes rigorous testing before reaching you. We don't just meet standards—we exceed them.
-            </p>
-            
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-icon">🔬</div>
-                    <h3>Third-Party Testing</h3>
-                    <p style="margin-bottom: 1rem;">Independent laboratory verification of every batch:</p>
-                    <ul style="color: #94a3b8; font-size: 0.875rem; padding-left: 1.5rem; margin-bottom: 1rem;">
-                        <li>Heavy metals (Pb, Cd, As, Hg)</li>
-                        <li>Microbial contamination</li>
-                        <li>Pesticide residues</li>
-                        <li>Potency verification</li>
-                        <li>Identity testing</li>
-                    </ul>
-                    <p style="color: #8b5cf6; font-size: 0.875rem; font-weight: 600;">
-                        Certificates of Analysis available for all products
-                    </p>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-icon">✓</div>
-                    <h3>In-House Quality Control</h3>
-                    <p style="margin-bottom: 1rem;">Our manufacturers perform multiple quality checks:</p>
-                    <ul style="color: #94a3b8; font-size: 0.875rem; padding-left: 1.5rem; margin-bottom: 1rem;">
-                        <li>Raw material verification</li>
-                        <li>In-process testing</li>
-                        <li>Finished product analysis</li>
-                        <li>Stability testing</li>
-                        <li>Batch record documentation</li>
-                    </ul>
-                    <p style="color: #8b5cf6; font-size: 0.875rem; font-weight: 600;">
-                        Full traceability from ingredient to bottle
-                    </p>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-icon">🏆</div>
-                    <h3>Certifications</h3>
-                    <p style="margin-bottom: 1rem;">Industry-leading standards and certifications:</p>
-                    <ul style="color: #94a3b8; font-size: 0.875rem; padding-left: 1.5rem; margin-bottom: 1rem;">
-                        <li>cGMP Certified Facility</li>
-                        <li>FDA Registered</li>
-                        <li>NSF Certified (pending)</li>
-                        <li>ISO 9001:2015 (pending)</li>
-                        <li>Informed Choice (pending)</li>
-                    </ul>
-                    <p style="color: #8b5cf6; font-size: 0.875rem; font-weight: 600;">
-                        Certification documents available upon request
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Test Results Section -->
-        <section style="margin: 4rem 0;">
-            <div style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1)); border: 2px solid rgba(139, 92, 246, 0.3); border-radius: 1.5rem; padding: 3rem; max-width: 900px; margin: 0 auto;">
-                <h2 style="margin-bottom: 1rem;">📋 Access Test Results</h2>
-                <p style="color: #cbd5e1; margin-bottom: 2rem;">
-                    We publish third-party Certificates of Analysis (CoA) for every batch. Each CoA includes complete testing results for purity, potency, and contaminants.
-                </p>
-                <div style="background: rgba(15, 23, 42, 0.5); padding: 2rem; border-radius: 1rem; margin-bottom: 1.5rem;">
-                    <h4 style="margin-bottom: 0.5rem; color: #8b5cf6;">How to Access Your Batch Results:</h4>
-                    <ol style="color: #cbd5e1; padding-left: 1.5rem; margin-top: 1rem; line-height: 1.8;">
-                        <li>Find the batch number on your bottle label</li>
-                        <li>Enter it in the form below</li>
-                        <li>Download the complete CoA and test results</li>
-                    </ol>
-                </div>
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <input 
-                        type="text" 
-                        placeholder="Enter batch number (e.g., EQF-2026-001)" 
-                        style="flex: 1; min-width: 250px; padding: 1rem; border-radius: 0.5rem; border: 1px solid rgba(139, 92, 246, 0.3); background: rgba(15, 23, 42, 0.8); color: white;"
-                    >
-                    <button class="subscribe-btn" style="width: auto; padding: 1rem 2rem;" onclick="alert('Test results portal coming Q1 2026. All CoAs will be publicly accessible.')">
-                        View Test Results
-                    </button>
-                </div>
-                <p style="color: #94a3b8; font-size: 0.875rem; margin-top: 1rem;">
-                    <strong>Coming Q1 2026:</strong> Full test results portal launches with first product batch
-                </p>
-            </div>
-        </section>
-
-        <!-- Complete Ingredient Database -->
-        <section style="margin: 4rem 0;">
-            <h2>Complete Ingredient Database</h2>
-            <p style="text-align: center; color: #94a3b8; max-width: 800px; margin: 0 auto 3rem;">
-                Click any ingredient to see research, dosing rationale, and specific form used.
-            </p>
-            
-            <!-- EQ:Focus Ingredients -->
-            <div style="margin-bottom: 3rem;">
-                <h3 style="text-align: center; margin-bottom: 2rem; color: #fbbf24;">☀️ EQ:Focus Ingredients</h3>
-                <div class="product-grid">
-                    <div class="product-card" onclick="showIngredient('Citicoline')">
-                        <h4 style="color: #a78bfa;">Citicoline</h4>
-                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">250mg</p>
-                        <p style="font-size: 0.875rem; color: #94a3b8;">Cognizin® branded form</p>
-                        <p style="margin-top: 1rem;">Focus and attention; acetylcholine synthesis</p>
-                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
-                    </div>
-                    
-                    <div class="product-card" onclick="showIngredient('Lion\'s Mane')">
-                        <h4 style="color: #a78bfa;">Lion's Mane</h4>
-                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">500mg</p>
-                        <p style="font-size: 0.875rem; color: #94a3b8;">30% polysaccharides</p>
-                        <p style="margin-top: 1rem;">Nerve growth factor; cognitive support</p>
-                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
-                    </div>
-                    
-                    <div class="product-card" onclick="showIngredient('Rhodiola')">
-                        <h4 style="color: #a78bfa;">Rhodiola rosea</h4>
-                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">150mg</p>
-                        <p style="font-size: 0.875rem; color: #94a3b8;">3% rosavins, 1% salidroside</p>
-                        <p style="margin-top: 1rem;">Mental fatigue resistance; stress adaptation</p>
-                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
-                    </div>
-                    
-                    <div class="product-card" onclick="showIngredient('NALT')">
-                        <h4 style="color: #a78bfa;">N-Acetyl L-Tyrosine</h4>
-                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">300mg</p>
-                        <p style="font-size: 0.875rem; color: #94a3b8;">Pharmaceutical grade</p>
-                        <p style="margin-top: 1rem;">Dopamine precursor; mental energy under stress</p>
-                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
-                    </div>
-                    
-                    <div class="product-card" onclick="showIngredient('L-Theanine')">
-                        <h4 style="color: #a78bfa;">L-Theanine</h4>
-                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">150mg</p>
-                        <p style="font-size: 0.875rem; color: #94a3b8;">Suntheanine® branded form</p>
-                        <p style="margin-top: 1rem;">Calm focus; alpha wave production</p>
-                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
-                    </div>
-                    
-                    <div class="product-card" onclick="showIngredient('NR')">
-                        <h4 style="color: #a78bfa;">Nicotinamide Riboside</h4>
-                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">250mg</p>
-                        <p style="font-size: 0.875rem; color: #94a3b8;">Niagen® branded form</p>
-                        <p style="margin-top: 1rem;">Cellular energy metabolism; NAD+ support</p>
-                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- EQ:Restore Ingredients -->
-            <div style="margin-bottom: 3rem;">
-                <h3 style="text-align: center; margin-bottom: 2rem; color: #818cf8;">🌙 EQ:Restore Ingredients</h3>
-                <div class="product-grid">
-                    <div class="product-card" onclick="showIngredient('Magnesium L-Threonate')">
-                        <h4 style="color: #a78bfa;">Magnesium L-Threonate</h4>
-                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">1000mg</p>
-                        <p style="font-size: 0.875rem; color: #94a3b8;">Magtein® branded form</p>
-                        <p style="margin-top: 1rem;">Sleep quality; memory consolidation; brain magnesium</p>
-                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
-                    </div>
-                    
-                    <div class="product-card" onclick="showIngredient('Ashwagandha')">
-                        <h4 style="color: #a78bfa;">Ashwagandha</h4>
-                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">300mg</p>
-                        <p style="font-size: 0.875rem; color: #94a3b8;">KSM-66® branded form</p>
-                        <p style="margin-top: 1rem;">Stress resilience; cortisol modulation</p>
-                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
-                    </div>
-                    
-                    <div class="product-card" onclick="showIngredient('Bacopa')">
-                        <h4 style="color: #a78bfa;">Bacopa monnieri</h4>
-                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">300mg</p>
-                        <p style="font-size: 0.875rem; color: #94a3b8;">50% bacosides</p>
-                        <p style="margin-top: 1rem;">Memory consolidation; learning support</p>
-                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
-                    </div>
-                    
-                    <div class="product-card" onclick="showIngredient('L-Theanine')">
-                        <h4 style="color: #a78bfa;">L-Theanine</h4>
-                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">200mg</p>
-                        <p style="font-size: 0.875rem; color: #94a3b8;">Suntheanine® branded form</p>
-                        <p style="margin-top: 1rem;">Relaxation; GABA modulation</p>
-                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
-                    </div>
-                    
-                    <div class="product-card" onclick="showIngredient('Phosphatidylserine')">
-                        <h4 style="color: #a78bfa;">Phosphatidylserine</h4>
-                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">150mg</p>
-                        <p style="font-size: 0.875rem; color: #94a3b8;">Sharp-PS® Green from sunflower</p>
-                        <p style="margin-top: 1rem;">Cortisol management; cognitive support</p>
-                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
-                    </div>
-                    
-                    <div class="product-card" onclick="showIngredient('Saffron')">
-                        <h4 style="color: #a78bfa;">Saffron Extract</h4>
-                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">28mg</p>
-                        <p style="font-size: 0.875rem; color: #94a3b8;">affron® branded form</p>
-                        <p style="margin-top: 1rem;">Mood support; sleep quality</p>
-                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
-                    </div>
-                    
-                    <div class="product-card" onclick="showIngredient('Apigenin')">
-                        <h4 style="color: #a78bfa;">Apigenin</h4>
-                        <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">25mg</p>
-                        <p style="font-size: 0.875rem; color: #94a3b8;">98% pure from chamomile</p>
-                        <p style="margin-top: 1rem;">Sleep initiation; GABA receptor modulation</p>
-                        <p style="color: #8b5cf6; font-size: 0.875rem; margin-top: 1rem;">Click to view research →</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Phase 2 Products Note -->
-            <div style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(51, 65, 85, 0.3)); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 1.5rem; padding: 2rem; text-align: center; max-width: 800px; margin: 3rem auto;">
-                <p style="color: #cbd5e1;">
-                    <strong style="color: #8b5cf6;">Complete transparency for all products:</strong><br>
-                    Full ingredient databases for EQ:Drive, EQ:Foundations, EQ:Shield, and EQ:Vision will be published here as those products launch in Q3-Q4 2026.
-                </p>
-            </div>
-        </section>
-
-        <!-- Manufacturing Transparency -->
-        <section style="margin: 4rem 0;">
-            <h2>Manufacturing Standards</h2>
-            <div class="story-container" style="max-width: 900px;">
-                <h3 style="margin-bottom: 1rem;">Where Your Supplements Are Made</h3>
-                <p>
-                    All BalanceEQ products are manufactured in FDA-registered, cGMP-certified facilities in the United States. We partner only with manufacturers who share our commitment to quality and transparency.
-                </p>
-                
-                <div style="margin: 2rem 0; padding: 1.5rem; background: rgba(15, 23, 42, 0.5); border-radius: 1rem;">
-                    <h4 style="margin-bottom: 1rem; color: #8b5cf6;">Our Manufacturing Requirements:</h4>
-                    <ul style="color: #cbd5e1; padding-left: 1.5rem; line-height: 1.8;">
-                        <li>FDA-registered facility with current cGMP certification</li>
-                        <li>Complete batch documentation and traceability</li>
-                        <li>Third-party testing for every production run</li>
-                        <li>Climate-controlled storage and handling</li>
-                        <li>Regular facility audits and inspections</li>
-                        <li>Validated cleaning procedures between batches</li>
-                    </ul>
-                </div>
-                
-                <p style="color: #94a3b8; font-size: 0.875rem; margin-top: 1.5rem;">
-                    <strong>Supplier Transparency:</strong> All raw material suppliers provide Certificates of Analysis and undergo our qualification process. Specific manufacturer names and locations will be published with our first production batch in Q1 2026.
-                </p>
-            </div>
-        </section>
-    </div>
-
-    <!-- INGREDIENTS PAGE (redirects to transparency) -->
-    <div id="ingredients" class="page">
-        <div class="hero">
-            <h1>Ingredient Information</h1>
-            <p class="subtitle">View our complete ingredient database and testing results on our Transparency page</p>
-        </div>
-        <div style="text-align: center; margin-top: 2rem;">
-            <button class="subscribe-btn" style="max-width: 300px; margin: 0 auto;" onclick="showPage('transparency')">
-                Go to Transparency Page
-            </button>
-        </div>
-    </div>
-        <div class="hero">
-            <h1>Our Ingredients</h1>
-            <p class="subtitle">Every ingredient is chosen for efficacy and dosed according to clinical research</p>
-        </div>
+        <h2 style="margin-top: 4rem;">Testing & Quality Assurance</h2>
+        <p style="text-align: center; color: #5A6C7D; max-width: 800px; margin: 0 auto 3rem;">
+            Every batch undergoes rigorous testing before reaching you. We don't just meet standards—we exceed them.
+        </p>
         
-        <div id="ingredientList">
-            <p style="text-align: center; color: #94a3b8; margin-top: 2rem;">
-                Click on any ingredient tag from the product pages to learn more about the science behind our formulations.
-            </p>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-icon">🔬</div>
+                <h3>Third-Party Testing</h3>
+                <p style="margin-bottom: 1rem;">Independent laboratory verification of every batch:</p>
+                <ul style="color: #5A6C7D; font-size: 0.875rem; padding-left: 1.5rem; margin-bottom: 1rem; line-height: 1.8;">
+                    <li>Heavy metals (Pb, Cd, As, Hg)</li>
+                    <li>Microbial contamination</li>
+                    <li>Pesticide residues</li>
+                    <li>Potency verification</li>
+                    <li>Identity testing</li>
+                </ul>
+                <p style="color: #2A9D8F; font-size: 0.875rem; font-weight: 600;">
+                    Certificates of Analysis available for all products
+                </p>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-icon">✓</div>
+                <h3>In-House Quality Control</h3>
+                <p style="margin-bottom: 1rem;">Our manufacturers perform multiple quality checks:</p>
+                <ul style="color: #5A6C7D; font-size: 0.875rem; padding-left: 1.5rem; margin-bottom: 1rem; line-height: 1.8;">
+                    <li>Raw material verification</li>
+                    <li>In-process testing</li>
+                    <li>Finished product analysis</li>
+                    <li>Stability testing</li>
+                    <li>Batch record documentation</li>
+                </ul>
+                <p style="color: #2A9D8F; font-size: 0.875rem; font-weight: 600;">
+                    Full traceability from ingredient to bottle
+                </p>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-icon">🏆</div>
+                <h3>Certifications</h3>
+                <p style="margin-bottom: 1rem;">Industry-leading standards and certifications:</p>
+                <ul style="color: #5A6C7D; font-size: 0.875rem; padding-left: 1.5rem; margin-bottom: 1rem; line-height: 1.8;">
+                    <li>cGMP Certified Facility</li>
+                    <li>FDA Registered</li>
+                    <li>NSF Certified (pending)</li>
+                    <li>ISO 9001:2015 (pending)</li>
+                    <li>Informed Choice (pending)</li>
+                </ul>
+                <p style="color: #2A9D8F; font-size: 0.875rem; font-weight: 600;">
+                    Certification documents available upon request
+                </p>
+            </div>
+        </div>
+
+        <!-- FAQ Section (Expandable) -->
+        <h2 style="margin-top: 4rem;">Frequently Asked Questions</h2>
+        <div style="max-width: 900px; margin: 2rem auto;">
+            <details style="background: white; border: 1px solid #E8EDF2; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem;">
+                <summary style="cursor: pointer; font-weight: 600; color: #1A2332;">Are these FDA approved?</summary>
+                <p style="margin-top: 1rem; color: #5A6C7D;">Dietary supplements are not approved by the FDA. However, we manufacture in FDA-registered, cGMP-certified facilities and follow all regulatory guidelines.</p>
+            </details>
+            
+            <details style="background: white; border: 1px solid #E8EDF2; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem;">
+                <summary style="cursor: pointer; font-weight: 600; color: #1A2332;">Where are these manufactured?</summary>
+                <p style="margin-top: 1rem; color: #5A6C7D;">All BalanceEQ products are manufactured in the United States in FDA-registered, cGMP-certified facilities.</p>
+            </details>
+            
+            <details style="background: white; border: 1px solid #E8EDF2; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem;">
+                <summary style="cursor: pointer; font-weight: 600; color: #1A2332;">Are these third-party tested?</summary>
+                <p style="margin-top: 1rem; color: #5A6C7D;">Yes. Every batch is tested by independent laboratories for heavy metals, microbial contamination, and potency. Certificates of Analysis available upon request.</p>
+            </details>
+            
+            <details style="background: white; border: 1px solid #E8EDF2; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem;">
+                <summary style="cursor: pointer; font-weight: 600; color: #1A2332;">What's your return policy?</summary>
+                <p style="margin-top: 1rem; color: #5A6C7D;">60-day money-back guarantee. If you try a product consistently for 30 days minimum and don't see benefits, contact us for a full refund.</p>
+            </details>
+            
+            <details style="background: white; border: 1px solid #E8EDF2; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem;">
+                <summary style="cursor: pointer; font-weight: 600; color: #1A2332;">Can I take these with my medications?</summary>
+                <p style="margin-top: 1rem; color: #5A6C7D;">Always consult your healthcare provider before starting any supplement, especially if taking medications. We provide ingredient lists and interaction warnings for your doctor to review.</p>
+            </details>
         </div>
     </div>
 
@@ -1256,7 +1152,7 @@
             
             <div class="ingredient-header">
                 <h1 id="ingredientName">Ingredient Name</h1>
-                <p id="ingredientClaim" style="color: #94a3b8; font-size: 1.125rem; margin-top: 1rem;"></p>
+                <p id="ingredientClaim" style="color: #5A6C7D; font-size: 1.125rem; margin-top: 1rem;"></p>
                 
                 <div class="ingredient-meta">
                     <div class="meta-item">
@@ -1276,7 +1172,7 @@
             
             <div class="studies-section">
                 <h2>Clinical Research</h2>
-                <p style="color: #94a3b8; margin-bottom: 1.5rem;">
+                <p style="color: #5A6C7D; margin-bottom: 1.5rem;">
                     Our formulations are based on peer-reviewed scientific literature:
                 </p>
                 <div id="studyLinks"></div>
@@ -1294,7 +1190,7 @@
         <div class="footer-container">
             <div class="footer-section">
                 <h4>Balasana</h4>
-                <p style="color: #64748b; font-size: 0.875rem;">Balance from the inside out</p>
+                <p style="color: #5A6C7D; font-size: 0.875rem;">Balance from the inside out</p>
             </div>
             
             <div class="footer-section">
@@ -1340,13 +1236,13 @@
                 <input type="hidden" id="productName" name="product" value="">
                 <input type="email" name="email" placeholder="Enter your email" required>
                 <input type="text" name="name" placeholder="Your name (optional)">
-                <button type="submit" class="subscribe-btn">Notify Me</button>
+                <button type="submit" class="btn-primary" style="width: 100%;">Notify Me</button>
             </form>
         </div>
     </div>
 
     <script>
-        // Ingredient database (loaded from your Notion data)
+        // Ingredient database (same as before)
         const ingredientDatabase = {
             'Citicoline': {
                 category: 'Nootropic',
@@ -1479,225 +1375,16 @@
                     'https://doi.org/10.3390/molecules25030589'
                 ],
                 products: ['EQ:Restore']
-            },
-            'Uridine': {
-                category: 'Nucleotide',
-                dose: '150mg',
-                claim: 'Dopamine synthesis; neural membrane support',
-                range: '500-1000mg',
-                studies: [
-                    'https://doi.org/10.1016/j.brainresrev.2005.05.002'
-                ],
-                products: ['EQ:Drive']
-            },
-            'ALCAR': {
-                category: 'Amino Acid',
-                dose: '500mg',
-                claim: 'Mitochondrial energy; acetylcholine support',
-                range: '500-2000mg',
-                studies: [
-                    'https://doi.org/10.1002/hup.2682',
-                    'https://doi.org/10.1016/j.neurobiolaging.2006.12.019'
-                ],
-                products: ['EQ:Drive']
-            },
-            'Pine Bark': {
-                category: 'Antioxidant',
-                dose: '100mg',
-                claim: 'Blood flow; cognitive support',
-                range: '100-200mg',
-                studies: [
-                    'https://doi.org/10.1089/jmf.2014.0003',
-                    'https://doi.org/10.2174/1871527314666150202145424'
-                ],
-                products: ['EQ:Drive']
-            },
-            'CoQ10': {
-                category: 'Antioxidant',
-                dose: '100mg',
-                claim: 'Mitochondrial function; cellular energy',
-                range: '90-200mg',
-                studies: [
-                    'https://doi.org/10.1089/act.2009.15312',
-                    'https://doi.org/10.3390/nu10020168'
-                ],
-                products: ['EQ:Drive']
-            },
-            'PQQ': {
-                category: 'Antioxidant',
-                dose: '10mg',
-                claim: 'Mitochondrial biogenesis; neuroprotection',
-                range: '10-20mg',
-                studies: [
-                    'https://doi.org/10.1089/rej.2012.1397',
-                    'https://doi.org/10.1016/j.freeradbiomed.2007.12.004'
-                ],
-                products: ['EQ:Drive']
-            },
-            'NAC': {
-                category: 'Amino Acid',
-                dose: '600mg',
-                claim: 'Glutathione precursor; antioxidant support',
-                range: '600-1800mg',
-                studies: [
-                    'https://doi.org/10.1016/j.biopha.2018.04.003',
-                    'https://doi.org/10.1016/j.pnpbp.2015.11.016'
-                ],
-                products: ['EQ:Drive']
-            },
-            'Vitamin D3': {
-                category: 'Vitamin',
-                dose: '2000 IU',
-                claim: 'Immune function; bone health; mood',
-                range: '1000-4000 IU',
-                studies: [
-                    'https://doi.org/10.1093/nutrit/nux058',
-                    'https://doi.org/10.1080/19390211.2017.1417134'
-                ],
-                products: ['EQ:Foundations']
-            },
-            'Vitamin K2': {
-                category: 'Vitamin',
-                dose: '100µg',
-                claim: 'Calcium regulation; cardiovascular health',
-                range: '90-180µg',
-                studies: [
-                    'https://doi.org/10.1159/000510911',
-                    'https://doi.org/10.3945/an.115.010918'
-                ],
-                products: ['EQ:Foundations']
-            },
-            'Omega-3': {
-                category: 'Fatty Acid',
-                dose: 'EPA 900mg / DHA 600mg',
-                claim: 'Brain health; cardiovascular support; inflammation',
-                range: '1000-3000mg combined',
-                studies: [
-                    'https://doi.org/10.1017/S0007114512001493',
-                    'https://doi.org/10.3945/ajcn.111.023523'
-                ],
-                products: ['EQ:Foundations']
-            },
-            'Curcumin': {
-                category: 'Polyphenol',
-                dose: '150mg',
-                claim: 'Inflammatory response; joint comfort',
-                range: '500-2000mg',
-                studies: [
-                    'https://doi.org/10.1016/j.jcm.2016.02.012',
-                    'https://doi.org/10.1089/jmf.2006.9.503'
-                ],
-                products: ['EQ:Shield']
-            },
-            'Quercetin': {
-                category: 'Flavonoid',
-                dose: '120mg',
-                claim: 'Antioxidant; immune support',
-                range: '500-1000mg',
-                studies: [
-                    'https://doi.org/10.3390/nu12020348',
-                    'https://doi.org/10.3390/ijms17091123'
-                ],
-                products: ['EQ:Shield']
-            },
-            'Resveratrol': {
-                category: 'Polyphenol',
-                dose: '60mg',
-                claim: 'Longevity; cardiovascular support',
-                range: '150-500mg',
-                studies: [
-                    'https://doi.org/10.1111/j.1755-5922.2009.00124.x',
-                    'https://doi.org/10.1016/j.arr.2016.03.009'
-                ],
-                products: ['EQ:Shield']
-            },
-            'Ginger': {
-                category: 'Botanical',
-                dose: '60mg',
-                claim: 'Inflammatory response; digestive support',
-                range: '1000-3000mg',
-                studies: [
-                    'https://doi.org/10.1016/j.jep.2018.11.023',
-                    'https://doi.org/10.1089/jmf.2005.8.125'
-                ],
-                products: ['EQ:Shield']
-            },
-            'Boswellia': {
-                category: 'Botanical',
-                dose: '60mg',
-                claim: 'Joint comfort; inflammatory response',
-                range: '300-500mg',
-                studies: [
-                    'https://doi.org/10.1002/ptr.1985',
-                    'https://doi.org/10.1016/j.phymed.2003.07.004'
-                ],
-                products: ['EQ:Shield']
-            },
-            'Lutein': {
-                category: 'Carotenoid',
-                dose: '10mg',
-                claim: 'Macular health; visual performance',
-                range: '6-20mg',
-                studies: [
-                    'https://doi.org/10.1001/archophthalmol.2011.213',
-                    'https://doi.org/10.1111/j.1475-1313.2012.00911.x'
-                ],
-                products: ['EQ:Vision']
-            },
-            'Zeaxanthin': {
-                category: 'Carotenoid',
-                dose: '2mg',
-                claim: 'Blue light protection; retinal health',
-                range: '2-4mg',
-                studies: [
-                    'https://doi.org/10.1001/archophthalmol.2011.213',
-                    'https://doi.org/10.1111/j.1475-1313.2012.00911.x'
-                ],
-                products: ['EQ:Vision']
-            },
-            'Astaxanthin': {
-                category: 'Carotenoid',
-                dose: '4mg',
-                claim: 'Eye fatigue; visual acuity',
-                range: '4-12mg',
-                studies: [
-                    'https://doi.org/10.1089/jmf.2012.2389',
-                    'https://doi.org/10.1080/09168451.2017.1338117'
-                ],
-                products: ['EQ:Vision']
-            },
-            'Bilberry': {
-                category: 'Botanical',
-                dose: '80mg (36% anthocyanins)',
-                claim: 'Night vision; eye circulation',
-                range: '80-480mg',
-                studies: [
-                    'https://doi.org/10.3109/02713683.2011.605770',
-                    'https://doi.org/10.1007/s11130-005-9001-7'
-                ],
-                products: ['EQ:Vision']
-            },
-            'Blackcurrant': {
-                category: 'Botanical',
-                dose: '80mg (35%)',
-                claim: 'Eye fatigue; dark adaptation',
-                range: '50-240mg',
-                studies: [
-                    'https://doi.org/10.1155/2012/132737',
-                    'https://doi.org/10.1089/jmf.2015.0053'
-                ],
-                products: ['EQ:Vision']
             }
         };
 
-        // Navigation
+        // Navigation functions
         function showPage(pageId) {
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
             window.scrollTo(0, 0);
         }
 
-        // Scroll to bundles section
         function scrollToBundles() {
             showPage('products');
             setTimeout(() => {
@@ -1708,7 +1395,6 @@
             }, 100);
         }
 
-        // Show ingredient detail
         function showIngredient(ingredientName) {
             const data = ingredientDatabase[ingredientName];
             if (!data) {
@@ -1722,13 +1408,11 @@
             document.getElementById('ingredientDose').textContent = data.dose;
             document.getElementById('ingredientRange').textContent = data.range;
 
-            // Study links
             const studyLinksDiv = document.getElementById('studyLinks');
             studyLinksDiv.innerHTML = data.studies.map(url => 
                 `<a href="${url}" class="study-link" target="_blank">${url}</a>`
             ).join('');
 
-            // Related products
             const productsDiv = document.getElementById('relatedProducts');
             productsDiv.innerHTML = data.products.map(product => 
                 `<span class="ingredient-tag" style="display: inline-block; margin: 0.5rem 0.5rem 0 0;">${product}</span>`
@@ -1737,7 +1421,7 @@
             showPage('ingredientDetail');
         }
 
-        // Modal
+        // Modal functions
         function openModal(productName) {
             document.getElementById('modalTitle').textContent = `Get Notified: ${productName}`;
             document.getElementById('productName').value = productName;
@@ -1748,22 +1432,10 @@
             document.getElementById('subscribeModal').classList.remove('active');
         }
 
-        // Close modal on outside click
         document.getElementById('subscribeModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeModal();
             }
-        });
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
         });
     </script>
 </body>
