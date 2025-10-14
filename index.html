@@ -70,11 +70,50 @@
             display: none;
             gap: 2.5rem;
             list-style: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(253, 251, 247, 0.98);
+            backdrop-filter: blur(10px);
+            flex-direction: column;
+            padding: 2rem;
+            border-bottom: 1px solid rgba(44, 62, 80, 0.08);
+        }
+        
+        .nav-links.active {
+            display: flex;
         }
         
         @media (min-width: 768px) {
             .nav-links {
                 display: flex;
+                position: static;
+                flex-direction: row;
+                padding: 0;
+                border-bottom: none;
+                background: transparent;
+            }
+        }
+        
+        .mobile-menu-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 8px;
+        }
+        
+        .mobile-menu-toggle span {
+            width: 24px;
+            height: 2px;
+            background: #2C3E50;
+            transition: all 0.3s;
+        }
+        
+        @media (min-width: 768px) {
+            .mobile-menu-toggle {
+                display: none;
             }
         }
         
@@ -696,11 +735,16 @@
                 <img src="balasana-logo.png" alt="Balasana" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
                 <span class="logo-text" style="display: none;">BALASANA</span>
             </div>
-            <ul class="nav-links">
-                <li><a href="#philosophy">Philosophy</a></li>
-                <li><a href="#story">Our Story</a></li>
-                <li><a href="#vision">Vision</a></li>
-                <li><a href="#standards">Standards</a></li>
+            <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#philosophy" onclick="closeMobileMenu()">Philosophy</a></li>
+                <li><a href="#story" onclick="closeMobileMenu()">Our Story</a></li>
+                <li><a href="#vision" onclick="closeMobileMenu()">Vision</a></li>
+                <li><a href="#standards" onclick="closeMobileMenu()">Standards</a></li>
                 <li><a href="https://balance-eq.com" target="_blank">Shop BalanceEQ</a></li>
             </ul>
         </div>
@@ -1114,6 +1158,15 @@
     </div>
 
     <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+        
+        function closeMobileMenu() {
+            document.getElementById('navLinks').classList.remove('active');
+        }
+        
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
