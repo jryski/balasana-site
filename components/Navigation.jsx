@@ -16,6 +16,7 @@ export default function Navigation() {
             <li><Link href="/products" className="text-[#5A6C7D] hover:text-[#2A9D8F]">Products</Link></li>
             <li><Link href="/story" className="text-[#5A6C7D] hover:text-[#2A9D8F]">Our Story</Link></li>
             <li><Link href="/transparency" className="text-[#5A6C7D] hover:text-[#2A9D8F]">Transparency</Link></li>
+            <li><Link href="/blog" className="text-[#5A6C7D] hover:text-[#2A9D8F]">Blog</Link></li>
           </ul>
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-2xl">
             {isMenuOpen ? '' : ''}
@@ -29,6 +30,7 @@ export default function Navigation() {
             <li><Link href="/products" onClick={() => setIsMenuOpen(false)} className="text-[#FDFBF7] text-2xl">Products</Link></li>
             <li><Link href="/story" onClick={() => setIsMenuOpen(false)} className="text-[#FDFBF7] text-2xl">Our Story</Link></li>
             <li><Link href="/transparency" onClick={() => setIsMenuOpen(false)} className="text-[#FDFBF7] text-2xl">Transparency</Link></li>
+            <li><Link href="/blog" onClick={() => setIsMenuOpen(false)} className="text-[#FDFBF7] text-2xl">Blog</Link></li>
           </ul>
         </div>
       )}
