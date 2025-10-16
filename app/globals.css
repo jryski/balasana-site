@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@theme {
+  --color-balasana-dark: #1A2332;
+  --color-balasana-teal: #2A9D8F;
+  --color-balasana-ink: #2C3E50;
+  --color-balasana-sand: #FDFBF7;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -281,3 +289,7 @@ html.dark .blog-content li {
 .blog-content > * + * {
   margin-top: 0;
 }
+
+/* Optional: keep branding tight in prose */
+.prose a { @apply text-balasana-teal no-underline hover:underline; }
+.prose blockquote { @apply border-l-4 border-balasana-teal bg-[#E8F5F3] rounded-lg; }
