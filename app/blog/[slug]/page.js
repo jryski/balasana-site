@@ -4,22 +4,31 @@ import { PortableText } from '@portabletext/react'
 
 const components = {
   block: {
-    normal: ({children}) => <p className="mb-6 text-lg leading-relaxed">{children}</p>,
-    h2: ({children}) => <h2 className="text-3xl font-semibold text-[#1A2332] mt-12 mb-6">{children}</h2>,
-    h3: ({children}) => <h3 className="text-2xl font-semibold text-[#1A2332] mt-8 mb-4">{children}</h3>,
-    blockquote: ({children}) => (
-      <blockquote className="border-l-4 border-[#2A9D8F] bg-[#E8F5F3] pl-6 py-4 my-8 italic rounded">
+    blockquote: ({ children }) => (
+      <blockquote className="border-l-4 border-balasana-teal bg-[#E8F5F3] pl-6 py-4 my-8 italic rounded">
         {children}
       </blockquote>
     ),
   },
-  list: {
-    bullet: ({children}) => <ul className="list-disc ml-6 mb-6 space-y-2">{children}</ul>,
-    number: ({children}) => <ol className="list-decimal ml-6 mb-6 space-y-2">{children}</ol>,
+  marks: {
+    link: ({ value, children }) => {
+      const href = value?.href || '#'
+
+      return (
+        <a
+          href={href}
+          className="font-semibold text-balasana-teal underline decoration-2 underline-offset-2 transition-colors duration-150 hover:text-balasana-dark"
+          target={href.startsWith('http') ? '_blank' : undefined}
+          rel={href.startsWith('http') ? 'noreferrer noopener' : undefined}
+        >
+          {children}
+        </a>
+      )
+    },
   },
-  listItem: {
-    bullet: ({children}) => <li className="text-lg">{children}</li>,
-    number: ({children}) => <li className="text-lg">{children}</li>,
+  list: {
+    bullet: ({ children }) => <ul className="list-disc list-outside pl-6 space-y-2">{children}</ul>,
+    number: ({ children }) => <ol className="list-decimal list-outside pl-6 space-y-2">{children}</ol>,
   },
 }
 
@@ -51,7 +60,7 @@ export default async function BlogPost({ params }) {
           )}
         </div>
 
-        <div className="text-[#2C3E50]">
+        <div className="prose prose-lg max-w-none text-balasana-charcoal prose-headings:text-balasana-dark prose-strong:text-balasana-dark prose-a:text-balasana-teal prose-blockquote:text-balasana-charcoal dark:prose-invert">
           <PortableText value={post.body} components={components} />
         </div>
       </div>
