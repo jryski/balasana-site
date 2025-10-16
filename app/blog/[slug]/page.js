@@ -1,127 +1,69 @@
-import Link from 'next/link';
-import { client } from '@/lib/sanity.client';
-import { postQuery, postsQuery } from '@/lib/sanity.queries';
-import { PortableText } from '@portabletext/react';
+import { client } from '@/lib/sanity.client'
+import { postQuery } from '@/lib/sanity.queries'
+import { PortableText } from '@portabletext/react'
 
-export async function generateStaticParams() {
-  const posts = await client.fetch(postsQuery);
-  return posts.map((post) => ({
-    slug: post.slug.current,
-  }));
+const components = {
+  block: {
+    blockquote: ({ children }) => (
+      <blockquote className="border-l-4 border-balasana-teal bg-[#E8F5F3] pl-6 py-4 my-8 italic rounded">
+        {children}
+      </blockquote>
+    ),
+  },
+  marks: {
+    link: ({ value, children }) => {
+      const href = value?.href || '#'
+
+      return (
+        <a
+          href={href}
+          className="font-semibold text-balasana-teal underline decoration-2 underline-offset-2 transition-colors duration-150 hover:text-balasana-dark"
+          target={href.startsWith('http') ? '_blank' : undefined}
+          rel={href.startsWith('http') ? 'noreferrer noopener' : undefined}
+        >
+          {children}
+        </a>
+      )
+    },
+  },
+  list: {
+    bullet: ({ children }) => <ul className="list-disc list-outside pl-6 space-y-2">{children}</ul>,
+    number: ({ children }) => <ol className="list-decimal list-outside pl-6 space-y-2">{children}</ol>,
+  },
 }
 
 export default async function BlogPost({ params }) {
-  const { slug } = await params;
-  const post = await client.fetch(postQuery, { slug });
+  const { slug } = await params
+  const post = await client.fetch(postQuery, { slug })
 
   if (!post) {
-    return <div>Post not found</div>;
+    return <div>Post not found</div>
   }
 
-  const components = {
-    block: {
-      normal: ({ children }) => (
-        <p className="mb-8 text-lg leading-relaxed text-balasana-charcoal dark:text-balasana-cream">
-          {children}
-        </p>
-      ),
-      h1: ({ children }) => (
-        <h1 className="text-4xl font-semibold mt-16 mb-8 text-balasana-dark dark:text-balasana-cream leading-tight">
-          {children}
-        </h1>
-      ),
-      h2: ({ children }) => (
-        <h2 className="text-3xl font-semibold mt-12 mb-6 text-balasana-dark dark:text-balasana-cream leading-tight">
-          {children}
-        </h2>
-      ),
-      h3: ({ children }) => (
-        <h3 className="text-2xl font-semibold mt-10 mb-5 text-balasana-dark dark:text-balasana-cream leading-tight">
-          {children}
-        </h3>
-      ),
-      blockquote: ({ children }) => (
-        <blockquote className="border-l-4 border-balasana-teal pl-8 my-10 italic text-2xl bg-gray-50 dark:bg-gray-800 py-6 pr-8 rounded-r-xl text-balasana-dark dark:text-balasana-cream">
-          {children}
-        </blockquote>
-      ),
-    },
-    marks: {
-      strong: ({ children }) => (
-        <strong className="font-semibold text-balasana-dark dark:text-balasana-cream">{children}</strong>
-      ),
-      em: ({ children }) => <em className="italic">{children}</em>,
-      link: ({ value, children }) => {
-        const target = (value?.href || '').startsWith('http') ? '_blank' : undefined;
-        return (
-          <a 
-            href={value?.href} 
-            target={target} 
-            rel={target === '_blank' ? 'noopener noreferrer' : undefined}
-            className="text-balasana-teal underline hover:opacity-80 transition-opacity"
-          >
-            {children}
-          </a>
-        );
-      },
-    },
-    list: {
-      bullet: ({ children }) => (
-        <ul className="list-disc pl-10 mb-8 space-y-3">
-          {children}
-        </ul>
-      ),
-      number: ({ children }) => (
-        <ol className="list-decimal pl-10 mb-8 space-y-3">
-          {children}
-        </ol>
-      ),
-    },
-    listItem: {
-      bullet: ({ children }) => (
-        <li className="text-lg leading-relaxed text-balasana-charcoal dark:text-balasana-cream pl-2">
-          {children}
-        </li>
-      ),
-      number: ({ children }) => (
-        <li className="text-lg leading-relaxed text-balasana-charcoal dark:text-balasana-cream pl-2">
-          {children}
-        </li>
-      ),
-    },
-  };
-
   return (
-    <main className="pt-32 pb-20 px-8 min-h-screen">
-      <div className="max-w-4xl mx-auto">
-        <Link 
-          href="/blog" 
-          className="inline-block text-balasana-teal text-lg mb-12 hover:opacity-80 transition-opacity font-medium"
-        >
-          ← Back to Blog
-        </Link>
+    <article className="pt-32 pb-20 px-8">
+      <div className="max-w-[800px] mx-auto">
+        <h1 className="text-4xl md:text-5xl font-semibold mb-6 text-[#1A2332] leading-tight">
+          {post.title}
+        </h1>
         
-        <article>
-          <header className="mb-16 pb-12 border-b-2 border-gray-200 dark:border-gray-700">
-            <h1 className="text-5xl font-semibold mb-8 leading-tight text-balasana-dark dark:text-balasana-cream">
-              {post.title}
-            </h1>
-            {post.publishedAt && (
-              <p className="text-balasana-gray text-base font-medium">
-                Published on {new Date(post.publishedAt).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}
-              </p>
-            )}
-          </header>
-          
-          <div className="blog-content prose prose-lg max-w-none">
-            <PortableText value={post.body} components={components} />
-          </div>
-        </article>
+        <div className="flex items-center gap-4 text-[#5A6C7D] mb-8 pb-8 border-b border-[#E8EDF2]">
+          <span>{post.author}</span>
+          {post.publishedAt && (
+            <span>
+              {new Date(post.publishedAt).toLocaleDateString('en-US', {
+                month: 'long',
+                day: 'numeric',
+                year: 'numeric'
+              })}
+            </span>
+          )}
+        </div>
+
+        <div className="prose prose-lg max-w-none text-balasana-charcoal prose-headings:text-balasana-dark prose-strong:text-balasana-dark prose-a:text-balasana-teal prose-blockquote:text-balasana-charcoal dark:prose-invert">
+          <PortableText value={post.body} components={components} />
+        </div>
       </div>
-    </main>
-  );
+    </article>
+  )
 }
