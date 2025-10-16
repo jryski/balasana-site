@@ -1,6 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 * {
   margin: 0;
@@ -10,33 +14,270 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-  background: rgb(253, 251, 247);
-  color: rgb(44, 62, 80);
+  background: #FDFBF7;
+  color: #2C3E50;
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-/* Dark mode */
+/* Dark mode default */
 html.dark body {
-  background: rgb(26, 35, 50);
-  color: rgb(253, 251, 247);
+  background: #1A2332;
+  color: #E8EDF2;
 }
 
-html.dark section {
-  color: rgb(253, 251, 247);
+/* Smooth transitions for theme switching */
+body,
+nav,
+.pillar-card,
+.story-section,
+.product-card,
+.standard-card,
+.cta-box,
+footer {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* Light mode headings */
+h1, h2, h3, h4 {
+  color: #1A2332;
+}
+
+/* Dark mode headings */
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4 {
+  color: #FDFBF7;
+}
+
+/* Light mode text */
+.hero-subtitle,
+.section-intro,
+.pillar-description,
+.standard-card p,
+.product-card p,
+.cta-box p {
+  color: #5A6C7D;
+}
+
+/* Dark mode text */
+html.dark .hero-subtitle,
+html.dark .section-intro,
+html.dark .pillar-description,
+html.dark .standard-card p,
+html.dark .product-card p,
+html.dark .cta-box p {
+  color: #A8B5C3;
+}
+
+/* Light mode backgrounds */
+.section-wide,
+.story-section,
+.standards-section {
+  background: white;
+}
+
+html.dark .section-wide,
+html.dark .story-section,
+html.dark .standards-section {
+  background: #0F1419;
+}
+
+/* Light mode cards */
+.pillar-card,
+.product-card,
+.cta-box {
+  background: white;
+  border-color: #E8EDF2;
+}
+
+html.dark .pillar-card,
+html.dark .product-card,
+html.dark .cta-box {
+  background: #2C3E50;
+  border-color: #3A4F63;
+}
+
+/* Teal sections stay teal in both modes */
+.vision-section {
+  background: linear-gradient(135deg, #2A9D8F 0%, #238276 100%);
+  color: white;
+}
+
+/* Navigation in dark mode */
 html.dark nav {
-  background: rgba(26, 35, 50, 0.95) !important;
-  border-bottom: 1px solid rgba(253, 251, 247, 0.1) !important;
+  background: rgba(26, 35, 50, 0.95);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
 }
 
-html.dark nav span,
-html.dark nav button,
-html.dark nav a {
-  color: rgb(253, 251, 247) !important;
+html.dark .nav-links {
+  background: rgba(26, 35, 50, 0.98);
+}
+
+html.dark .nav-links a {
+  color: #A8B5C3;
+}
+
+html.dark .nav-links a:hover {
+  color: #2A9D8F;
+}
+
+html.dark .mobile-menu-toggle span {
+  background: #E8EDF2;
+}
+
+/* Gradient backgrounds adapt */
+.hero {
+  background: linear-gradient(135deg, #FDFBF7 0%, #F5F2ED 100%);
+}
+
+html.dark .hero {
+  background: linear-gradient(135deg, #1A2332 0%, #0F1419 100%);
+}
+
+.pillar-section {
+  background: linear-gradient(135deg, #F5F2ED 0%, #FDFBF7 100%);
+}
+
+html.dark .pillar-section {
+  background: linear-gradient(135deg, #0F1419 0%, #1A2332 100%);
+}
+
+.cta-section {
+  background: linear-gradient(135deg, #F5F2ED 0%, #FDFBF7 100%);
+}
+
+html.dark .cta-section {
+  background: linear-gradient(135deg, #0F1419 0%, #1A2332 100%);
+}
+
+.product-preview {
+  background: #FDFBF7;
+}
+
+html.dark .product-preview {
+  background: #1A2332;
+}
+
+/* Feature boxes adapt */
+.pillar-feature {
+  background: #F8FAFB;
+  color: #2C3E50;
+}
+
+html.dark .pillar-feature {
+  background: #1A2332;
+  color: #E8EDF2;
+}
+
+.story-highlight {
+  background: #F8FAFB;
+  border-left-color: #2A9D8F;
+}
+
+html.dark .story-highlight {
+  background: #2C3E50;
+  border-left-color: #2A9D8F;
+}
+
+/* Standard icon circles */
+.standard-icon {
+  background: #F8FAFB;
+  border-color: #E8EDF2;
+}
+
+html.dark .standard-icon {
+  background: #1A2332;
+  border-color: #3A4F63;
+}
+
+/* Footer stays dark in both modes */
+footer {
+  background: #1A2332;
+  color: white;
+}
+
+/* Buttons stay consistent */
+.btn-primary {
+  background: #2A9D8F;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #238276;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #2A9D8F;
+  border-color: #2A9D8F;
+}
+
+.btn-secondary:hover {
+  background: #2A9D8F;
+  color: white;
+}
+
+/* Product badges */
+.product-badge {
+  background: #E8F5F3;
+  color: #2A9D8F;
+}
+
+html.dark .product-badge {
+  background: rgba(42, 157, 143, 0.2);
+  color: #2A9D8F;
+}
+
+/* Roadmap cards in teal section - always light text */
+.roadmap-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.roadmap-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Ensure teal section text is always white */
+.vision-section h2,
+.vision-section p,
+.roadmap-card h3,
+.roadmap-card p {
+  color: white !important;
+}
+/* Blog Content Formatting - Add to bottom of globals.css */
+
+/* Dark mode blog content */
+html.dark .blog-content p {
+  color: #E8EDF2;
+}
+
+html.dark .blog-content h1,
+html.dark .blog-content h2,
+html.dark .blog-content h3 {
+  color: #FDFBF7;
+}
+
+html.dark .blog-content strong {
+  color: #FDFBF7;
+}
+
+html.dark .blog-content blockquote {
+  background: #2C3E50;
+  color: #E8EDF2;
+}
+
+html.dark .blog-content li {
+  color: #E8EDF2;
+}
+
+/* Ensure proper spacing and readability */
+.blog-content {
+  line-height: 1.8;
+}
+
+.blog-content > * + * {
+  margin-top: 0;
 }
