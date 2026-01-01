@@ -306,43 +306,66 @@
             font-size: 1.25rem;
         }
         
-        /* Story Section */
-        .story-section {
+        /* Team Section */
+        .team-section {
             padding: 8rem 2rem;
             background: white;
         }
         
-        .story-container {
+        .team-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
             max-width: 900px;
-            margin: 0 auto;
+            margin: 4rem auto;
         }
         
-        .story-container p {
-            font-size: 1.25rem;
-            color: #2C3E50;
-            margin-bottom: 2rem;
-            line-height: 1.9;
-        }
-        
-        .story-highlight {
-            background: #F8FAFB;
-            border-left: 4px solid #2A9D8F;
-            padding: 2rem 2.5rem;
-            margin: 3rem 0;
-            border-radius: 0 12px 12px 0;
-        }
-        
-        .story-highlight p {
-            margin-bottom: 1rem;
-        }
-        
-        .story-quote {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #1A2332;
-            font-style: italic;
-            margin: 2rem 0;
+        .team-preview-card {
+            background: #FDFBF7;
+            border: 2px solid #E8EDF2;
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
             text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .team-preview-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            border-color: #2A9D8F;
+        }
+        
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
+            background: #E8EDF2;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2A9D8F;
+        }
+        
+        .team-preview-card h3 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-role {
+            color: #5A6C7D;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        .team-preview-card p {
+            color: #5A6C7D;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
         }
         
         /* Vision/Roadmap Section */
@@ -716,10 +739,6 @@
                 grid-template-columns: 1fr;
             }
             
-            .story-container p {
-                font-size: 1.1rem;
-            }
-            
             .roadmap-grid,
             .product-cards {
                 grid-template-columns: 1fr;
@@ -742,7 +761,7 @@
             </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#philosophy" onclick="closeMobileMenu()">Philosophy</a></li>
-                <li><a href="#story" onclick="closeMobileMenu()">Our Story</a></li>
+                <li><a href="team.html">Our Team</a></li>
                 <li><a href="#vision" onclick="closeMobileMenu()">Vision</a></li>
                 <li><a href="#standards" onclick="closeMobileMenu()">Standards</a></li>
                 <li><a href="https://balance-eq.com" target="_blank">Shop BalanceEQ</a></li>
@@ -824,81 +843,41 @@
         </div>
     </section>
 
-    <!-- FOUNDER STORY: The Why -->
-    <section class="story-section" id="story">
-        <div class="story-container">
-            <h2 style="text-align: left; margin-bottom: 3rem;">The Journey to Balance</h2>
-            
-            <p>
-                I hit a wall I didn't see coming. Not a gentle "I need a vacation" wall—the kind where you wake up 
-                exhausted after 8 hours of sleep. Where you stare at your to-do list and feel nothing but dread. 
-                Where you snap at the people you love most because you have nothing left to give.
+    <!-- TEAM: Meet the Founders -->
+    <section class="team-section">
+        <div class="section">
+            <h2>Meet the Team</h2>
+            <p class="section-intro">
+                We're a family building something real. Two people who found their way back to balance 
+                and decided to help others do the same. Here are our stories.
             </p>
             
-            <p>
-                I was overloaded. Burned out. Running on fumes.
-            </p>
-            
-            <div class="story-highlight">
-                <p>
-                    The worst part? Everyone kept telling me this was just "part of being a parent." 
-                    But this wasn't normal tired. This was lying-awake-at-3am-despite-being-exhausted tired.
-                </p>
+            <div class="team-preview-grid">
+                <div class="team-preview-card">
+                    <div class="team-avatar">JR</div>
+                    <h3>Jesse Ryski</h3>
+                    <p class="team-role">Co-Founder</p>
+                    <p>
+                        From burnout to breakthrough. Jesse's journey started with a simple question: Why? 
+                        His path through stress, research, and self-discovery led to the creation of BalanceEQ's 
+                        science-backed formulas.
+                    </p>
+                </div>
+
+                <div class="team-preview-card">
+                    <div class="team-avatar">AR</div>
+                    <h3>Amanda Ryski</h3>
+                    <p class="team-role">Co-Founder</p>
+                    <p>
+                        Finding herself again through motherhood. Amanda's transformation from surviving to 
+                        thriving inspired the heart of Balasana's mission: you can't pour from an empty cup.
+                    </p>
+                </div>
             </div>
-            
-            <p>
-                I knew something had to change. <strong>I refused to accept that this was just how life had to be.</strong>
-            </p>
-            
-            <p>
-                I started researching—really researching. Not just Googling "supplements for energy," but diving into 
-                clinical studies, learning about neurotransmitters, stress hormones, and circadian rhythms. I discovered 
-                that what I was experiencing had names: chronic stress, cognitive fatigue, HPA axis dysregulation.
-            </p>
-            
-            <p class="story-quote">
-                "Your brain doesn't work the same way at 7am and 7pm."
-            </p>
-            
-            <p>
-                In the morning, you need support for focus, clarity, and mental energy. In the evening, you need 
-                support for recovery, memory consolidation, and restorative sleep. Yet every supplement I found 
-                treated my brain like it was the same all day. One formula. One approach.
-            </p>
-            
-            <p>
-                That's when I realized: <strong>Nobody had built what I actually needed.</strong>
-            </p>
-            
-            <div class="story-highlight">
-                <p>
-                    Balasana started as a dream to create wellness apparel—the name itself, Sanskrit for "child's pose," 
-                    represented our commitment to finding equilibrium. But as we researched and spoke with customers, 
-                    we realized something fundamental:
-                </p>
-                <p style="font-weight: 600; color: #2A9D8F;">
-                    True balance doesn't start with what you wear. It starts with what fuels you from within.
-                </p>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="team.html" class="btn-primary">Read Our Stories</a>
             </div>
-            
-            <p>
-                So I decided to create what should have existed all along: A circadian nootropic system built for 
-                real people dealing with real stress. Not marketing doses. Not proprietary blends hiding insufficient 
-                ingredients. Clinical-grade formulas with transparent dosing and actual efficacy.
-            </p>
-            
-            <p>
-                But that was just the beginning. Because burnout isn't solved by supplements alone. It requires a 
-                complete approach—nutrition, movement, recovery, and mindset. A complete lifestyle ecosystem.
-            </p>
-            
-            <p style="font-size: 1.5rem; font-weight: 600; color: #1A2332; text-align: center; margin-top: 3rem;">
-                The mission: Help you find your balance, from the inside out.
-            </p>
-            
-            <p style="text-align: center; color: #5A6C7D; margin-top: 1rem;">
-                — Jesse, Founder
-            </p>
         </div>
     </section>
 
@@ -1103,7 +1082,7 @@
                 <h4>Company</h4>
                 <ul>
                     <li><a href="#philosophy">Our Philosophy</a></li>
-                    <li><a href="#story">Founder Story</a></li>
+                    <li><a href="team.html">Our Team</a></li>
                     <li><a href="#vision">Vision & Roadmap</a></li>
                     <li><a href="#standards">Our Standards</a></li>
                     <li><a href="mailto:hello@balasana.com">Contact</a></li>
