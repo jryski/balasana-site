@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Balasana</title>
+    <meta name="description" content="Meet the founders of Balasana. Jesse and Amanda's journey from burnout to building a family wellness brand.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #FDFBF7;
+            color: #2C3E50;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.25rem 2rem;
+            border-bottom: 1px solid rgba(44, 62, 80, 0.08);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            cursor: pointer;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1A2332;
+            letter-spacing: -0.02em;
+        }
+        
+        .logo span {
+            color: #2A9D8F;
+        }
+        
+        .back-link {
+            color: #2A9D8F;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        .back-link:hover {
+            opacity: 0.7;
+        }
+        
+        /* Page sections */
+        .page {
+            display: none;
+            padding: 8rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        .page.story {
+            max-width: 800px;
+        }
+        
+        /* Hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #1A2332;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+        
+        .subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+            color: #5A6C7D;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1A2332;
+        }
+        
+        /* Team Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        
+        .team-card {
+            background: white;
+            border: 1px solid #E8EDF2;
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            border-color: #2A9D8F;
+        }
+        
+        .avatar {
+            width: 128px;
+            height: 128px;
+            margin: 0 auto 1.5rem;
+            background: #E8EDF2;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2A9D8F;
+        }
+        
+        .team-card h2 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .role {
+            color: #5A6C7D;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+        
+        .team-card p {
+            color: #5A6C7D;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        
+        /* Story Pages */
+        .story-header {
+            margin-bottom: 3rem;
+        }
+        
+        .story-header .avatar {
+            margin-bottom: 1.5rem;
+        }
+        
+        .story-header h1 {
+            text-align: left;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 0.75rem;
+        }
+        
+        .story-header .subtitle {
+            text-align: left;
+            font-size: 1.25rem;
+        }
+        
+        .story-content {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #2C3E50;
+        }
+        
+        .story-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .story-content strong {
+            color: #1A2332;
+            font-weight: 600;
+        }
+        
+        .story-content em {
+            font-style: italic;
+        }
+        
+        .story-content ul {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+        
+        .story-content ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight {
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: #1A2332;
+            margin: 2rem 0;
+        }
+        
+        .signature {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: #1A2332;
+            border-top: 1px solid #E8EDF2;
+            padding-top: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .signature-name {
+            font-size: 1rem;
+            font-style: italic;
+            color: #5A6C7D;
+            margin-top: 0.5rem;
+        }
+        
+        /* Buttons */
+        .btn-primary {
+            background: #2A9D8F;
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .btn-primary:hover {
+            background: #238276;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #2A9D8F;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #2A9D8F;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .btn-secondary:hover {
+            background: #2A9D8F;
+            color: white;
+        }
+        
+        /* Footer Navigation */
+        .footer-nav {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #E8EDF2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .future-team {
+            text-align: center;
+            padding: 4rem 0;
+            border-top: 1px solid #E8EDF2;
+            margin-top: 4rem;
+        }
+        
+        .future-team p {
+            color: #5A6C7D;
+            font-size: 1.125rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-nav {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo" onclick="showPage('overview')">
+                Bala<span>sana</span>
+            </div>
+            <a href="https://balasana.com" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- TEAM OVERVIEW PAGE -->
+    <div id="overview" class="page active">
+        <div class="hero">
+            <h1>Our Team</h1>
+            <p class="subtitle">
+                We're a family building something real. Here are our stories.
+            </p>
+        </div>
+
+        <div class="team-grid">
+            <!-- Jesse -->
+            <div class="team-card">
+                <div class="avatar">JR</div>
+                <h2>Jesse Ryski</h2>
+                <p class="role">Co-Founder</p>
+                <p>
+                    From burnout to breakthrough. Jesse's journey started with a simple question: Why? 
+                    His path through stress, research, and self-discovery led to the creation of BalanceEQ's 
+                    science-backed formulas.
+                </p>
+                <button class="btn-primary" onclick="showPage('jesse')">Read Jesse's Story</button>
+            </div>
+
+            <!-- Amanda -->
+            <div class="team-card">
+                <div class="avatar">AR</div>
+                <h2>Amanda Ryski</h2>
+                <p class="role">Co-Founder</p>
+                <p>
+                    Finding herself again through motherhood. Amanda's transformation from surviving to 
+                    thriving inspired the heart of Balasana's mission: you can't pour from an empty cup.
+                </p>
+                <button class="btn-primary" onclick="showPage('amanda')">Read Amanda's Story</button>
+            </div>
+        </div>
+
+        <div class="future-team">
+            <p>As our family grows, we'll introduce more team members here.</p>
+        </div>
+    </div>
+
+    <!-- JESSE'S STORY PAGE -->
+    <div id="jesse" class="page story">
+        <a href="#" onclick="showPage('overview'); return false;" class="back-link" style="display: inline-block; margin-bottom: 2rem;">← Back to Team</a>
+        
+        <div class="story-header">
+            <div class="avatar">JR</div>
+            <h1>Jesse Ryski</h1>
+            <p class="subtitle">Co-Founder • The Why Behind It All</p>
+        </div>
+
+        <div class="story-content">
+            <p class="highlight">I want to talk about why I'm creating this brand.</p>
+
+            <p>
+                It started with us wanting to create something to make money. We thought we could build a business that would provide income, so we decided on a clothing line based on yoga wear and fitness. We thought, okay, athleisure is popular, people are into this, and we were already in that world. Amanda was doing a lot of yoga and working out all the time, so it felt obvious.
+            </p>
+
+            <p>
+                But after getting it rolling we realized we were doing it for the wrong reason. I always go back to why. <strong>Why are we doing this?</strong> And there was no why. The why was money. That's not a good reason to build something. So we let it go for a while.
+            </p>
+
+            <p>
+                I focused on work. I focused on mental health. I focused on patience and being present. I tried to understand why I felt stressed, what that stress did to me, how it affected my brain, and how that affected my body.
+            </p>
+
+            <p>
+                I read books. I read white papers and research papers. I researched ingredients. I tried supplements. I meditated. I practiced mindfulness. I did breathing exercises. I deleted social media. I put my phone down. I went outside. I started to feel clear again.
+            </p>
+
+            <p>
+                At the same time, Amanda was going through her own transition, starting with her body. She had two children and wanted to regain her self-confidence and feel like herself again. She found a group of girls who shared that same mindset. They held each other accountable. She completely changed. She regained her self-image.
+            </p>
+
+            <p>
+                Both of us taking accountability for ourselves, and showing up for each other, started to pay off. It paid off for each of us on our own, and for us as a couple, and for our kids, and for our family. We were happier, calmer, more present. We slept better. Mornings were better. Getting the kids to school was better. We bonded. We enjoyed the simple moments again.
+            </p>
+
+            <p>
+                I got promoted. I took on more responsibility. When I was at work, I was at work. I was focused.
+            </p>
+
+            <p>
+                I found a supplement that helped me focus. I found another that helped me stay calm. I found one that finally helped me sleep. Before I knew it, I had a shelf full of bottles. I shared them with Amanda, and she felt the difference too. We started saying, <em>why doesn't anyone just make a version of this that actually targets what people need, instead of forcing you to buy five different things.</em>
+            </p>
+
+            <p>
+                We were happy. We felt better. And as much as we wished that first business had worked just so we could build something together, we knew it wasn't the right thing. The reason behind it was wrong.
+            </p>
+
+            <p class="highlight">So we started over.</p>
+
+            <p>
+                We started building something new. At first it took a bunch of different shapes. A platform for people to support each other. A workout group. A way to work out together on video, virtually. An app to help people find groups. We talked about making videos on how to bake sourdough. We talked about starting a bakery collective with other people in our lives who were on the same path of mindfulness and intention.
+            </p>
+
+            <p>
+                Over time it got clearer. What we were building wasn't just a product. It was a lifestyle change that we had both quietly stepped into, separately and together. And we wanted to share that.
+            </p>
+
+            <p>So we started writing down everything we could do to help people.</p>
+
+            <ul>
+                <li>How stress affects your body.</li>
+                <li>How social media messes with your head and your attention.</li>
+                <li>How constant scrolling and constant screens train you to need noise all the time.</li>
+                <li>How everything is fighting for your attention.</li>
+                <li>How hard it is to find quiet right now.</li>
+                <li>How the tension in the world presses on you even when you think you're tuning it out.</li>
+            </ul>
+
+            <p>It all affects us, whether we see it or not.</p>
+
+            <p>
+                <strong>There is no silver bullet.</strong> There is no "do this once and you're fixed." There is no pill that makes it all go away. It's a process, and it's ongoing. We want to talk about that honestly.
+            </p>
+
+            <p>
+                So we're repurposing Balasana. Balasana is Sanskrit for "child's pose," and it was supposed to be our clothing line. Now it's something different. It will be a place to help you find focus and peace. To re-center your life. To find balance. To find your people.
+            </p>
+
+            <p>
+                And we'll fund it with products that actually help. We'll hold ourselves accountable to doing the research and sharing the research. Making sure it's safe, tested, and real. Only including ingredients that actually need to be there, at the right doses. Making sure it's safe for most people, and calling it out when it isn't. Only putting things in front of you that bring value to the person using them, not just to the person selling them.
+            </p>
+
+            <p>
+                We are not some giant corporate, faceless organization. <strong>We are a family.</strong> We want to grow that family to include other people who are on this same path and help however we can. I want to work less and enjoy more of my life. I want that for you too.
+            </p>
+
+            <p>
+                Our ad campaigns are not going to be about getting louder. They're going to be about stepping back. We're putting out an open bounty for any creator or influencer who wants to take a real day off, shut it down, and not be seen. We'll ask you to slow down. To stop scrolling. We'll push the idea that you are not less than. That different doesn't mean worse. We'll say out loud that perfection is fake and you'll kill yourself chasing it. We'll keep saying that there is beauty in imperfection. We'll keep saying that every single one of us is trying to hold it together.
+            </p>
+
+            <p>
+                Along the way, we're going to teach. I plan to sponsor creators making content that will actually improve your quality of life or teach you a skill. Something that pulls you away from your screen, not deeper into it.
+            </p>
+
+            <p class="highlight">
+                We don't have all the answers. We're building something real. If any of this already feels like where you are, you're part of it.
+            </p>
+        </div>
+
+        <div class="footer-nav">
+            <button class="btn-secondary" onclick="showPage('amanda')">Read Amanda's Story →</button>
+            <a href="https://balasana.com" style="color: #5A6C7D; text-decoration: none;">Visit Balasana.com</a>
+        </div>
+    </div>
+
+    <!-- AMANDA'S STORY PAGE -->
+    <div id="amanda" class="page story">
+        <a href="#" onclick="showPage('overview'); return false;" class="back-link" style="display: inline-block; margin-bottom: 2rem;">← Back to Team</a>
+        
+        <div class="story-header">
+            <div class="avatar">AR</div>
+            <h1>Amanda Ryski</h1>
+            <p class="subtitle">Co-Founder • The Heart of the Mission</p>
+        </div>
+
+        <div class="story-content">
+            <p class="highlight">My why.</p>
+
+            <p>
+                My husband's words are always, "why not." But as the professional nay sayer of our household, I am generally the one to lead with caution. We began our Balasana journey years back, with a dream of making a good side hustle. As a stay at home mom of two who lives in leggings most days, that felt comfortable, it made sense in that moment. We soon realized that while yes, we could make some money in an over populated market of aesthetically pleasing athleisure wear and lux fabrics, there was no real passion there to move forward. During the fizzle out phase, we challenged each other to find that passion.
+            </p>
+
+            <p>
+                My personal story may look a lot like yours. I like to consider myself a jack of all trades, master of none. The common threads of my professional life pre-kids was making people feel beautiful, feel healthier, and feel seen. Be it the years of hair and makeup, or the years of dentistry, my passion was in helping and educating others. That passion still shows up time to time, and in new ways. The ultimate thing I wanted most in the world was to be, Mom. It's what I am most proud of, and will always strive to be better at.
+            </p>
+
+            <p>
+                Any new mom will understand that navigating through motherhood while losing and finding new versions of yourself is challenging. I've thrived and I've merely survived different stages over the last 7 years in that role. A very important lesson I've learned that stays true through each phase is that old saying <strong>"I cannot pour from an empty cup"</strong>.
+            </p>
+
+            <p>
+                The never ending mental lists, the over stimulation, the mom guilt, the "I have nothing left to give" as I fall asleep on the couch each night. As parents we have these battles with ourselves, trying our best to be everything to everyone. There feels like there's not enough time in the day to achieve everything we want to despite all our efforts. We're burnt out. But perhaps we just need a little help...
+            </p>
+
+            <p class="highlight">I like to call this new phase, the shift.</p>
+
+            <p>
+                Everything we choose to put our energy towards is a domino effect. Making small but tangible changes over time made all the difference. We are what we feed our minds and our bodies. I took a step back from doom scrolling. Moved my body consistently. Learned to meditate. Started speaking and thinking more positively instead of negatively. Supported my gut with healthier food and nutrients. Found new hobbies that sparked joy. <strong>I filled my cup.</strong>
+            </p>
+
+            <p>
+                In return I was able to care best for my family because I was able to care for myself. Self care truly is not selfish. It's necessary. That's when it all came full circle.
+            </p>
+
+            <p>
+                We found passion in the peeling back of layers and poured what we had learned individually and together to create a lifestyle and wellness brand that was already seamlessly intertwined within our days. We're striving to build a community. A place where we can culminate together with one common goal of showing up as better versions of ourselves than yesterday.
+            </p>
+
+            <p>
+                <strong>No one thing, or pill, will ever be a fix all.</strong> But I believe with intentional living, and healthy daily habits, you can find the balance to keep thriving in your ever changing home and work life. We hope to be a part of your story, lighten your load, support and help guide you on this journey back to yourself.
+            </p>
+
+            <div class="signature">
+                <p>Welcome to our family,</p>
+                <p class="signature-name">- Amanda Ryski, Co-Founder of Balasana/BalanceEQ</p>
+            </div>
+        </div>
+
+        <div class="footer-nav">
+            <button class="btn-secondary" onclick="showPage('jesse')">Read Jesse's Story →</button>
+            <a href="https://balasana.com" style="color: #5A6C7D; text-decoration: none;">Visit Balasana.com</a>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
